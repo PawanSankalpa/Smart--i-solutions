@@ -6,8 +6,8 @@ import ProcessSection from "./components/ProcessSection";
 import TestimonialSection from "./components/TestimonialSection";
 import GallerySection from "./components/GallerySection";
 import FAQSection from "./components/FAQSection";
-// import CTA from "./components/CTA";
-// import ContactSection from "./components/ContactSection";
+import CTA from "./components/CTA";
+import ContactSection from "./components/ContactSection";
 // import Footer from "./components/Footer";
 
 import "./App.css";
@@ -22,9 +22,9 @@ function App() {
       <TestimonialSection />
       <GallerySection />
       <FAQSection />
-      {/*<CTA />
+      <CTA />
       <ContactSection />
-      <Footer /> */}
+      {/*<Footer /> */}
     </div>
   );
 }
