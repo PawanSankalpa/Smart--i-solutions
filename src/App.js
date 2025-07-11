@@ -4,8 +4,8 @@ import StatsSection from "./components/StatsSection";
 import FeaturesSection from "./components/FeaturesSection.jsx";
 import ProcessSection from "./components/ProcessSection";
 import TestimonialSection from "./components/TestimonialSection";
-// import GallerySection from "./components/GallerySection";
-// import FAQSection from "./components/FAQSection";
+import GallerySection from "./components/GallerySection";
+import FAQSection from "./components/FAQSection";
 // import CTA from "./components/CTA";
 // import ContactSection from "./components/ContactSection";
 // import Footer from "./components/Footer";
@@ -20,9 +20,9 @@ function App() {
        <FeaturesSection />
       <ProcessSection />
       <TestimonialSection />
-      {/*<GallerySection />
+      <GallerySection />
       <FAQSection />
-      <CTA />
+      {/*<CTA />
       <ContactSection />
       <Footer /> */}
     </div>
