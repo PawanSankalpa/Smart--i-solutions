@@ -1,0 +1,268 @@
+/* Process Section - Liquid Glass Modern */
+.process-section {
+  position: relative;
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #1e293b;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.process-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.03) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.03) 0%, transparent 30%);
+  z-index: -1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #1e3a8a, #10b981);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #475569;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Liquid Glass Timeline */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(30, 58, 138, 0.3) 20%, 
+    rgba(30, 58, 138, 0.6) 50%, 
+    rgba(30, 58, 138, 0.3) 80%, 
+    transparent 100%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.timeline-step {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-step.left {
+  justify-content: flex-start;
+  padding-right: 50%;
+}
+
+.timeline-step.right {
+  justify-content: flex-end;
+  padding-left: 50%;
+}
+
+.step-number {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+  z-index: 3;
+}
+
+.step-card {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-step:hover .step-card {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 8px 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.step-content {
+  padding: 2rem;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.step-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e3a8a;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.step-description {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Floating energy particles */
+.energy-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .timeline-step.left,
+  .timeline-step.right {
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .timeline-line {
+    left: 80px;
+  }
+  
+  .step-number {
+    left: 80px;
+  }
+  
+  .step-card {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-section {
+    padding: 5rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-line {
+    left: 60px;
+  }
+  
+  .step-number {
+    left: 60px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .step-card {
+    margin-left: 40px;
+  }
+  
+  .step-content {
+    padding: 1.5rem;
+  }
+  
+  .step-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-line {
+    left: 40px;
+  }
+  
+  .step-number {
+    left: 40px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .step-card {
+    margin-left: 20px;
+  }
+  
+  .step-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .step-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
