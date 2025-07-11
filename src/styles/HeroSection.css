@@ -1,10 +1,10 @@
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #bac043 0%,rgb(33, 149, 203) 50%, #07074c 100%);
+  background: linear-gradient(135deg, #bac043 0%, rgb(33, 149, 203) 50%, #07074c 100%);
   color: #ffffff;
   overflow: hidden;
   padding: 2rem;
@@ -18,7 +18,7 @@
 }
 
 .hero-sun-icon {
-  color: #f59f0bca;
+  color: #f59f0bed;
 }
 
 .hero-content {
@@ -145,5 +145,42 @@
   .hero-sun-icon {
     width: 200px;
     height: 200px;
+  }
+}
+
+.hero-background-panels-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hero-background-panel-item {
+  position: absolute;
+  opacity: 0;
+}
+
+.hero-background-panel-icon-subtle {
+  color: #f59e0b;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.hero-background-panel-item {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+  .hero-background-panel-item {
+    transform: scale(0.8);
   }
 }

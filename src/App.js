@@ -1,7 +1,7 @@
 import React from "react";
-import HeroSection from "./components/HeroSection";
-// import StatsSection from "./components/StatsSection";
-// import FeaturesSection from "./components/FeaturesSection";
+import HeroSection from "./components/HeroSection.jsx";
+import StatsSection from "./components/StatsSection";
+import FeaturesSection from "./components/FeaturesSection.jsx";
 // import ProcessSection from "./components/ProcessSection";
 // import TestimonialSection from "./components/TestimonialSection";
 // import GallerySection from "./components/GallerySection";
@@ -16,9 +16,9 @@ function App() {
   return (
     <div className="app-container">
       <HeroSection />
-      {/* <StatsSection />
-      <FeaturesSection />
-      <ProcessSection />
+      <StatsSection />
+       <FeaturesSection />
+      {/*<ProcessSection />
       <TestimonialSection />
       <GallerySection />
       <FAQSection />
