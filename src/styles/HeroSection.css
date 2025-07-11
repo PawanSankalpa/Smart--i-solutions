@@ -1,0 +1,149 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #bac043 0%,rgb(33, 149, 203) 50%, #07074c 100%);
+  color: #ffffff;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.hero-sun {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  opacity: 0.15;
+}
+
+.hero-sun-icon {
+  color: #f59f0bca;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: #f7cd10f4;
+  color: #1e3a8a;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge-icon {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  color: #1e3a8a;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title-highlight {
+  color: #f5c60bed;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-button-analysis,
+.hero-button-call {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.hero-button-analysis {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.hero-button-analysis:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+.hero-button-call {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.hero-button-call:hover {
+  background-color: #ffffff;
+  color: #1e3a8a;
+  transform: translateY(-2px);
+}
+
+.hero-button-icon {
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+.hero-feature-icon {
+  color: #f9d311;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-sun {
+    top: 5%;
+    right: 5%;
+  }
+
+  .hero-sun-icon {
+    width: 200px;
+    height: 200px;
+  }
+}
