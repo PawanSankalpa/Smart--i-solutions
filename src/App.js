@@ -3,7 +3,7 @@ import HeroSection from "./components/HeroSection.jsx";
 import StatsSection from "./components/StatsSection";
 import FeaturesSection from "./components/FeaturesSection.jsx";
 import ProcessSection from "./components/ProcessSection";
-// import TestimonialSection from "./components/TestimonialSection";
+import TestimonialSection from "./components/TestimonialSection";
 // import GallerySection from "./components/GallerySection";
 // import FAQSection from "./components/FAQSection";
 // import CTA from "./components/CTA";
@@ -19,8 +19,8 @@ function App() {
       <StatsSection />
        <FeaturesSection />
       <ProcessSection />
-      {/*<TestimonialSection />
-      <GallerySection />
+      <TestimonialSection />
+      {/*<GallerySection />
       <FAQSection />
       <CTA />
       <ContactSection />
