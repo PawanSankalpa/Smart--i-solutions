@@ -3,7 +3,7 @@ import { Zap, Sun, Phone } from "lucide-react";
 import "../styles/CTA.css";
 
 const CTA = () => (
-  <section className="cta-section">
+  <section id="cta" className="cta-section">
     <div className="cta-container">
       <div className="cta-content">
         <Zap className="cta-icon" size={48} />

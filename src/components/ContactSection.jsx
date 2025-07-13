@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/ContactSection.css";
 
 const ContactSection = () => (
-  <section className="contact-section">
+  <section id="contact" className="contact-section">
     <div className="contact-container">
       <div className="contact-grid">
 

@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/StatsSection.css";
 
 const StatsSection = () => (
-  <section className="stats-section">
+  <section id="stats" className="stats-section">
     <div className="stats-container">
       <div className="stats-grid">
         <div className="stat-item">

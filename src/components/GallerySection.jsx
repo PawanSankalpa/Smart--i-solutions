@@ -36,7 +36,7 @@ const GallerySection = () => {
   ];
 
   return (
-    <section className="gallery-section">
+    <section id="gallery" className="gallery-section">
       <div className="gallery-header">
         <h2>Our Solar Installations</h2>
         <p>Beautiful, efficient solar solutions for every type of property</p>

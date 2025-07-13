@@ -57,7 +57,7 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="testimonial-carousel-section">
+    <section id='testimonials' className="testimonial-carousel-section">
       <div className="testimonial-header">
         <h2>What Our Customers Say</h2>
         <p>Don't just take our word for it - hear from homeowners and businesses who made the switch</p>

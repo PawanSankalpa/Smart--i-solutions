@@ -50,7 +50,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="faq-section">
+    <section id="faq" className="faq-section">
       <div className="faq-container">
         <h2 className="faq-title">Frequently Asked Questions</h2>
         <p className="faq-subtitle">Answers to common questions about going solar</p>

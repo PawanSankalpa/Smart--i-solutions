@@ -4,7 +4,7 @@ import { Sun, Zap, ShieldCheck, TrendingUp, Leaf, Bolt, Phone } from "lucide-rea
 import "../styles/HeroSection.css";
 
 const HeroSection = () => (
-  <section className="hero-section">
+  <section id="hero" className="hero-section">
     <motion.div
       className="hero-sun"
       animate={{ rotate: 360 }}

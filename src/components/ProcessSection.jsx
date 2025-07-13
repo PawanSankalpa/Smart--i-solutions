@@ -37,7 +37,7 @@ const processSteps = [
 ];
 
 const ProcessSection = () => (
-  <section className="process-section">
+  <section id="process" className="process-section">
     <div className="container">
       <motion.div
         initial={{ opacity: 0 }}
