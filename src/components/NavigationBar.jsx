@@ -15,7 +15,7 @@ const NavigationBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo" onClick={() => scrollToSection("hero")}>
-        <img src="/logoSmart.png" alt="logo" />
+        <img src="/loloMain.png" alt="logo" />
       </div>
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
         <a onClick={() => scrollToSection("hero")}>Home</a>
