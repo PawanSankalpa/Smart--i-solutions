@@ -8,7 +8,7 @@ import GallerySection from "./components/GallerySection";
 import FAQSection from "./components/FAQSection";
 import CTA from "./components/CTA";
 import ContactSection from "./components/ContactSection";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -24,7 +24,7 @@ function App() {
       <FAQSection />
       <CTA />
       <ContactSection />
-      {/*<Footer /> */}
+      <Footer />
     </div>
   );
 }

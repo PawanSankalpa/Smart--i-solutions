@@ -1,0 +1,106 @@
+/* src/styles/Footer.css */
+
+.footer-section {
+  background-color: #1a202c; /* Dark background color (similar to gray-950) */
+  color: #a0aec0; /* Light gray text color (similar to gray-400) */
+  padding: 48px 20px; /* py-12 px-8 equivalent */
+  font-family: 'Inter', sans-serif; /* Ensure consistent font */
+}
+
+.footer-container {
+  max-width: 1120px; /* max-w-7xl equivalent */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: 32px; /* gap-8 equivalent */
+  margin-bottom: 48px; /* mb-12 equivalent */
+}
+
+/* Responsive adjustments for medium screens */
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+/* Responsive adjustments for large screens */
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr); /* Four columns on large screens */
+  }
+}
+
+.footer-col {
+  /* No specific styles needed here, children handle spacing */
+}
+
+.footer-heading {
+  color: #ffffff; /* White text for headings */
+  font-size: 18px; /* text-lg equivalent */
+  font-weight: 600; /* font-semibold equivalent */
+  margin-bottom: 16px; /* mb-4 equivalent */
+}
+
+.footer-description {
+  margin-bottom: 16px; /* mb-4 equivalent */
+  line-height: 1.5; /* Default line height for readability */
+}
+
+.social-links {
+  display: flex;
+  gap: 16px; /* space-x-4 equivalent */
+}
+
+.social-icon {
+  color: #a0aec0; /* text-gray-400 equivalent */
+  transition: color 0.3s ease; /* transition duration-300 ease-in-out */
+}
+
+.social-icon:hover {
+  color: #f59e0b; /* hover:text-amber-500 equivalent */
+}
+
+.footer-links {
+  list-style: none; /* Remove default list bullets */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* space-y-2 equivalent */
+}
+
+.footer-link {
+  color: #a0aec0; /* text-gray-400 equivalent */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* transition duration-300 ease-in-out */
+}
+
+.footer-link:hover {
+  color: #f59e0b; /* hover:text-amber-500 equivalent */
+}
+
+.footer-bottom {
+  border-top: 1px solid #4a5568; /* border-t border-gray-800 equivalent */
+  padding-top: 32px; /* pt-8 equivalent */
+  font-size: 14px; /* text-sm equivalent */
+  text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .footer-grid {
+    text-align: center; /* Center align columns on mobile */
+  }
+
+  .social-links {
+    justify-content: center; /* Center social icons on mobile */
+  }
+
+  .footer-links {
+    align-items: center; /* Center list items on mobile */
+  }
+}

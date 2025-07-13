@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/TestimonialSection.css';
 
 const testimonials = [
@@ -11,7 +11,7 @@ const testimonials = [
   {
     name: 'Sumanaseena',
     role: 'Small Business Owner',
-    quote: 'The commercial solar array has saved us over Rs.45,000 annually. Best investment we\'ve made for our business.',
+    quote: "The commercial solar array has saved us over Rs.45,000 annually. Best investment we've made for our business.",
     stars: 5,
   },
   {
@@ -39,29 +39,65 @@ const Star = () => (
 );
 
 const TestimonialSection = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % testimonials.length);
+  };
+
   return (
-    <section className="testimonial-section">
+    <section className="testimonial-carousel-section">
       <div className="testimonial-header">
         <h2>What Our Customers Say</h2>
         <p>Don't just take our word for it - hear from homeowners and businesses who made the switch</p>
       </div>
 
-      <div className="testimonial-grid">
+      <div className="carousel-container">
+        <button className="carousel-btn prev" onClick={prevSlide}>&#10094;</button>
+
         {testimonials.map((testimonial, index) => (
-          <div className="testimonial-card" key={index}>
-            <div className="testimonial-stars">
-              {[...Array(testimonial.stars)].map((_, i) => (
-                <Star key={i} />
-              ))}
+          <div
+            className={`carousel-slide ${index === current ? 'active' : ''}`}
+            key={index}
+          >
+            <div className="testimonial-card">
+              <div className="testimonial-stars">
+                {[...Array(testimonial.stars)].map((_, i) => (
+                  <Star key={i} />
+                ))}
+              </div>
+              <blockquote>"{testimonial.quote}"</blockquote>
+              <div className="testimonial-name">{testimonial.name}</div>
+              <div className="testimonial-role">{testimonial.role}</div>
             </div>
-            <blockquote>"{testimonial.quote}"</blockquote>
-            <div className="testimonial-name">{testimonial.name}</div>
-            <div className="testimonial-role">{testimonial.role}</div>
           </div>
+        ))}
+
+        <button className="carousel-btn next" onClick={nextSlide}>&#10095;</button>
+      </div>
+
+      <div className="carousel-dots">
+        {testimonials.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === current ? 'active' : ''}`}
+            onClick={() => setCurrent(index)}
+          ></span>
         ))}
       </div>
     </section>
   );
 };
 
-export default TestimonialSection; /* Save this as TestimonialSection.jsx */
+export default TestimonialSection;
