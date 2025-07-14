@@ -1,5 +1,5 @@
 import React from "react";
-import NavigationBar from "./components/NavigationBar.jsx";
+// import NavigationBar from "./components/NavigationBar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import StatsSection from "./components/StatsSection";
 import FeaturesSection from "./components/FeaturesSection.jsx";
@@ -16,7 +16,7 @@ import "./App.css";
 function App() {
   return (
     <div className="app-container">
-      <NavigationBar />
+      {/* <NavigationBar /> */}
       <HeroSection />
       <StatsSection />
        <FeaturesSection />

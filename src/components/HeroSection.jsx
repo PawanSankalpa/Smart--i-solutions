@@ -10,9 +10,11 @@ import {
   Phone,
 } from "lucide-react";
 import "../styles/HeroSection.css";
+import NavigationBar from "./NavigationBar.jsx"
 
 const HeroSection = () => (
   <section id="hero" className="hero-section">
+    < NavigationBar />
     <motion.div
       className="hero-sun"
       animate={{ rotate: 360 }}
