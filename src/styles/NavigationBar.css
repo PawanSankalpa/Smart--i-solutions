@@ -137,6 +137,7 @@ body {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    padding-left: 1.5rem;
   }
 
   /* Always visible buttons (Contact, Get Started, Testimonials) */
@@ -160,6 +161,40 @@ body {
   .navbar-links a:not(:nth-child(5)):not(:nth-child(8)):not(:nth-child(9)) {
     display: none;
   }
+}
 
-  
+/* Smaller Phones: up to 480px */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .navbar-logo img {
+    height: 2.2rem;
+  }
+
+  .navbar-links {
+    gap: 0.4rem;
+    padding-left: 1rem;
+  }
+
+  /* Adjust visible buttons for smaller screens */
+  .navbar-links a:nth-child(5),
+  .navbar-links a:nth-child(8),
+  .navbar-links a:nth-child(9) {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+  }
+
+  /* Make the CTA button slightly more prominent */
+  .navbar-links a:nth-child(8) {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  /* Optional: Hide Testimonials on very small screens if needed */
+  /* .navbar-links a:nth-child(5) {
+    display: none;
+  } */
 }
