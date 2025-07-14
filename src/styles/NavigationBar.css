@@ -185,34 +185,23 @@ body {
   }
 }
 
-/* Smaller Phones: up to 480px */
 @media (max-width: 480px) {
   .navbar {
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 0.8rem;
   }
 
   .navbar-logo img {
     height: 2.2rem;
   }
 
-  .navbar-links {
-    gap: 0.3rem;
-    max-width: 100%;
-  }
-
-  .navbar-links a:nth-child(5),
-  .navbar-links a:nth-child(9) {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.5rem;
+  .navbar-links a {
+    font-size: 0.9rem;
+    padding: 0.7rem;
   }
 
   .navbar-links a:nth-child(8) {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.7rem;
-  }
-
-  /* Optional: further tighten spacing on tiny screens */
-  .navbar-links a {
-    margin-right: 0.2rem;
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+    
   }
 }
