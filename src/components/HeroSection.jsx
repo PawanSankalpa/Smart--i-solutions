@@ -1,6 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Sun, Zap, ShieldCheck, TrendingUp, Leaf, Bolt, Phone } from "lucide-react";
+import {
+  Sun,
+  Zap,
+  ShieldCheck,
+  TrendingUp,
+  Leaf,
+  Bolt,
+  Phone,
+} from "lucide-react";
 import "../styles/HeroSection.css";
 
 const HeroSection = () => (
@@ -32,7 +40,8 @@ const HeroSection = () => (
         transition={{ duration: 1, delay: 0.2 }}
         className="hero-title"
       >
-        Power Your Life With <span className="hero-title-highlight">The Sun</span>
+        Power Your Life With{" "}
+        <span className="hero-title-highlight">The Sun</span>
       </motion.h1>
 
       <motion.p
@@ -41,7 +50,8 @@ const HeroSection = () => (
         transition={{ duration: 1, delay: 0.4 }}
         className="hero-description"
       >
-        Join thousands of homeowners and businesses who are saving money while protecting the planet with our premium solar solutions.
+        Join thousands of homeowners and businesses who are saving money while
+        protecting the planet with our premium solar solutions.
       </motion.p>
 
       <motion.div
@@ -49,14 +59,24 @@ const HeroSection = () => (
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-        <button className="hero-button-analysis">
-          Get Your Free Solar Analysis
+        <button
+          className="hero-button-analysis"
+          onClick={() => {
+            const section = document.getElementById("gallery"); // Or whatever ID your form section uses
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
+          Explore Our Services
           <Bolt size={20} className="hero-button-icon" />
         </button>
-        <button className="hero-button-call">
+        <a href="tel:+94769436431" className="hero-button-call-link">
+          <button className="hero-button-call">
             Call Us Today
             <Phone size={20} className="hero-button-icon" />
-        </button>
+          </button>
+        </a>
       </motion.div>
 
       <motion.div
