@@ -32,7 +32,7 @@ const HeroSection = () => (
       >
         <span>
           <Zap size={16} className="hero-badge-icon" />
-          Solar Revolution 2025
+          Smart i-Solutions 2025
         </span>
       </motion.div>
 
