@@ -131,19 +131,32 @@ body {
   .navbar {
     padding: 0.5rem 1rem;
     justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box; /* This ensures padding is included in width calculation */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   .navbar-links {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    padding-left: 1.5rem;
+    padding-left: 0;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Allows horizontal scrolling if absolutely needed */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
   }
 
-  /* Always visible buttons (Contact, Get Started, Testimonials) */
-  .navbar-links a:nth-child(5), /* Testimonials */
-  .navbar-links a:nth-child(8), /* Get Started */
-  .navbar-links a:nth-child(9) { /* Contact */
+  .navbar-links::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on Chrome/Safari */
+  }
+
+  /* Always visible buttons */
+  .navbar-links a:nth-child(5),
+  .navbar-links a:nth-child(8),
+  .navbar-links a:nth-child(9) {
     display: inline-flex;
     font-size: 0.85rem;
     padding: 0.4rem 0.7rem;
@@ -151,13 +164,15 @@ body {
     background-color: rgba(255, 255, 255, 0.231);
     color: #000;
     font-weight: 600;
+    white-space: nowrap; /* Prevent text wrapping */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
   }
 
-  .navbar-links a:nth-child(8){
+  .navbar-links a:nth-child(8) {
     background: linear-gradient(135deg, #f59e0b, #e26c3e);
   }
 
-  /* Hide other links by default */
+  /* Hide other links */
   .navbar-links a:not(:nth-child(5)):not(:nth-child(8)):not(:nth-child(9)) {
     display: none;
   }
@@ -174,26 +189,27 @@ body {
   }
 
   .navbar-links {
-    gap: 0.4rem;
-    padding-left: 1rem;
+    gap: 0.3rem; /* Reduced gap */
+    max-width: calc(100% - 90px); /* Reserve space for logo */
   }
 
-  /* Adjust visible buttons for smaller screens */
+  /* Adjust visible buttons */
+  .navbar-links a {
+    min-width: max-content; /* Ensure buttons don't collapse */
+  }
+
   .navbar-links a:nth-child(5),
-  .navbar-links a:nth-child(8),
   .navbar-links a:nth-child(9) {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.6rem;
-    border-radius: 6px;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
   }
 
-  /* Make the CTA button slightly more prominent */
   .navbar-links a:nth-child(8) {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
   }
 
-  /* Optional: Hide Testimonials on very small screens if needed */
+  /* Optionally hide Testimonials if needed */
   /* .navbar-links a:nth-child(5) {
     display: none;
   } */
