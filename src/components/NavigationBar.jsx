@@ -10,11 +10,11 @@ const NavigationBar = () => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false); // close menu on mobile
+      setIsOpen(false); // close mobile menu
     }
   };
 
-  // Add scroll shadow or background
+  // Scroll shadow effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -22,6 +22,15 @@ const NavigationBar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+  }, [isOpen]);
 
   // Toggle mobile menu
   const handleToggle = () => {
@@ -42,15 +51,15 @@ const NavigationBar = () => {
 
       {/* Navigation Links */}
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
-        <a onClick={() => scrollToSection("hero")}>Home</a>
-        <a onClick={() => scrollToSection("stats")}>Stats</a>
-        <a onClick={() => scrollToSection("features")}>Features</a>
-        <a onClick={() => scrollToSection("process")}>Process</a>
-        <a onClick={() => scrollToSection("testimonials")}>Testimonials</a>
-        <a onClick={() => scrollToSection("gallery")}>Gallery</a>
-        <a onClick={() => scrollToSection("faq")}>FAQ</a>
-        <a onClick={() => scrollToSection("cta")}>Get Started</a>
-        <a onClick={() => scrollToSection("contact")}>Contact</a>
+        <a className="home-link" onClick={() => scrollToSection("hero")}>Home</a>
+        <a className="stats-link" onClick={() => scrollToSection("stats")}>Stats</a>
+        <a className="features-link" onClick={() => scrollToSection("features")}>Features</a>
+        <a className="process-link" onClick={() => scrollToSection("process")}>Process</a>
+        <a className="testemonial-link" onClick={() => scrollToSection("testimonials")}>Testimonials</a>
+        <a className="gallery-link" onClick={() => scrollToSection("gallery")}>Gallery</a>
+        <a className="FAQ-link" onClick={() => scrollToSection("faq")}>FAQ</a>
+        <a className="get-started-link" onClick={() => scrollToSection("cta")}>Get Started</a>
+        <a className="contact-link" onClick={() => scrollToSection("contact")}>Contact</a>
       </div>
     </nav>
   );
