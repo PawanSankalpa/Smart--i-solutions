@@ -18,7 +18,7 @@ const CTA = () => (
             style={{ textDecoration: "none" }}
           >
             <button className="cta-button-primary">
-              Send Us an Email <Sun className="cta-button-icon" size={20} />
+              Email an Expert <Sun className="cta-button-icon" size={20} />
             </button>
           </a>
           <a
