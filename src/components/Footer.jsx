@@ -3,7 +3,7 @@ import "../styles/Footer.css";
 
 const FacebookIcon = () => (
   <a
-    href="https://www.facebook.com/your-username" // 👈 Replace with your actual Facebook profile/page URL
+    href="https://www.facebook.com/share/1CLvCCpxNX/" // 👈 Replace with your actual Facebook profile/page URL
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Visit Facebook Profile"
