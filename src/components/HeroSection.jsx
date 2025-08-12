@@ -31,8 +31,8 @@ const HeroSection = () => (
         className="hero-badge"
       >
         <span>
-          <Zap size={16} className="hero-badge-icon" />
-          Sunmax Energy
+          <Zap size={26} className="hero-badge-icon" />
+          Sun Max Energy
         </span>
       </motion.div>
 

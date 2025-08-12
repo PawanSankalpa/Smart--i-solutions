@@ -16,7 +16,7 @@ const ContactSection = () => (
           <div className="contact-item">
             <span className="contact-icon">📍</span>
             <a
-              href="https://www.google.com/maps/place/No+333D,+Welivita,+Kaduwela,+Sri+Lanka"
+              href="https://www.google.com/maps/place/Rahula+Junction/@5.9523734,80.4989682,14z/data=!4m10!1m2!2m1!1sNo.+41%2FA1,+Rahula+Junction,+Matara!3m6!1s0x3ae13f2fb1ab7737:0x5c9abf1d5eb3b29!8m2!3d5.9530207!4d80.5348519!15sCiJOby4gNDEvQTEsIFJhaHVsYSBKdW5jdGlvbiwgTWF0YXJhWiEiH25vIDQxIGExIHJhaHVsYSBqdW5jdGlvbiBtYXRhcmGSAQhidXNfc3RvcJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOMGJVNDNXWEpSUlJBQqoBVhABKgwiCG5vIDQxIGExKAAyHxABIhtJ69NO5VMzWS99Zh1VWdQqnGS5pH0bP3z4R1gyIxACIh9ubyA0MSBhMSByYWh1bGEganVuY3Rpb24gbWF0YXJh4AEA-gEECAAQMw!16s%2Fg%2F11h1d95db?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -32,19 +32,19 @@ const ContactSection = () => (
                   borderRadius: "5px",
                 }}
               >
-                <h3>Kaduwela Head Office</h3>
-                <p>No 333D, Welivita, Kaduwela, Sri Lanka</p>
+                <h3>Matara Head Office</h3>
+                <p>No. 41/A1, Rahula Junction, Matara</p>
               </div>
             </a>
           </div>
 
           <div className="contact-item">
             <span className="contact-icon">📞</span>
-            <a href="tel:+94706070707" style={{ textDecoration: "none" }}>
+            <a href="tel:+947066037207" style={{ textDecoration: "none" }}>
               <div>
                 <h3>Call Us</h3>
 
-                <p>+94 706 070 707</p>
+                <p>+94 7066037207</p>
               </div>
             </a>
           </div>
@@ -52,12 +52,12 @@ const ContactSection = () => (
           <div className="contact-item">
             <span className="contact-icon">✉️</span>
             <a
-              href="mailto:smartispl7@gmail.com"
+              href="mailto:sunmax.solar.srilanka@gmail.com"
               style={{ textDecoration: "none" }}
             >
               <div>
                 <h3>Email Us</h3>
-                <p>smartispl7@gmail.com</p>
+                <p>sunmax.solar.srilanka@gmail.com</p>
               </div>
             </a>
           </div>

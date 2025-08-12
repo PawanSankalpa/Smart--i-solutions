@@ -110,7 +110,7 @@ const Footer = () => (
     <div className="footer-container">
       <div className="footer-grid">
         <div className="footer-col">
-          <h3 className="footer-heading">SMART I-SOLUTIONS</h3>
+          <h3 className="footer-heading">Sun Max Energy</h3>
           <p className="footer-description">
             Leading the renewable energy revolution with premium solar solutions
             for homes and businesses.
