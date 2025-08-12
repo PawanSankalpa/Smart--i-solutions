@@ -7,7 +7,7 @@ const ContactSection = () => (
     <div className="contact-container">
       <div className="contact-grid">
         <div className="contact-info">
-          <h2>Contact Smart -i Solutions</h2>
+          <h2>Contact Sun Max Energy</h2>
           <p>
             Have questions or ready to get started? Our solar experts are here
             to help you every step of the way.

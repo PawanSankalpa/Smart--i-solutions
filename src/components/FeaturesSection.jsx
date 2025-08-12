@@ -39,7 +39,7 @@ export default function FeaturesSection() {
   return (
     <section id="features" className="features-section">
       <div className="features-header">
-        <h2>Why Smart -i Solutions Stands Out</h2>
+        <h2>Why Sun Max Energy Stands Out</h2>
         <p>We're not just another solar company - we're your energy transformation partners</p>
       </div>
 

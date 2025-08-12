@@ -6,8 +6,8 @@ const StatsSection = () => (
     <div className="stats-container">
       <div className="stats-grid">
         <div className="stat-item">
-          <h3 className="stat-number">10+</h3>
-          <p className="stat-label">Solar Panels Installed</p>
+          <h3 className="stat-number">7+</h3>
+          <p className="stat-label">Years of Experience</p>
         </div>
         <div className="stat-item">
           <h3 className="stat-number">4.9★</h3>
