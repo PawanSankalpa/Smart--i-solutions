@@ -41,7 +41,7 @@ const NavigationBar = () => {
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       {/* Logo */}
       <div className="navbar-logo" onClick={() => scrollToSection("hero")}>
-        <img src="/loloMain.png" alt="logo" />
+        <img src="/loloMain.jpeg" alt="logo" />
       </div>
 
       {/* Hamburger / Close icon */}

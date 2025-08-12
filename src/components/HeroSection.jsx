@@ -32,7 +32,7 @@ const HeroSection = () => (
       >
         <span>
           <Zap size={16} className="hero-badge-icon" />
-          Smart i-Solutions 2025
+          Sunmax Energy
         </span>
       </motion.div>
 
@@ -52,8 +52,8 @@ const HeroSection = () => (
         transition={{ duration: 1, delay: 0.4 }}
         className="hero-description"
       >
-        Join thousands of homeowners and businesses who are saving money while
-        protecting the planet with our premium solar solutions.
+        Sun Max energy (Pvt.)Ltd. Reliable Solar Panel Suppliers in Sri Lanka.
+        Investment your future
       </motion.p>
 
       <motion.div
