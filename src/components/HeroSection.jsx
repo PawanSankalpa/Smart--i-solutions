@@ -10,11 +10,24 @@ import {
   Phone,
 } from "lucide-react";
 import "../styles/HeroSection.css";
-import NavigationBar from "./NavigationBar.jsx"
+import NavigationBar from "./NavigationBar.jsx";
+import Logo from "../assets/images/logo.jpeg"; // <-- Import your logo
 
 const HeroSection = () => (
   <section id="hero" className="hero-section">
-    < NavigationBar />
+    <NavigationBar />
+
+    {/* Background Logo */}
+    <motion.img
+      src={Logo}
+      alt="Company Logo"
+      className="hero-logo-bg"
+      // initial={{ opacity: 0, x: -50 }}
+      // animate={{ opacity: 0.15, x: 0 }}
+      // transition={{ duration: 1 }}
+    />
+
+    {/* Rotating Sun */}
     <motion.div
       className="hero-sun"
       animate={{ rotate: 360 }}
@@ -23,6 +36,7 @@ const HeroSection = () => (
       <Sun size={400} className="hero-sun-icon" />
     </motion.div>
 
+    {/* Main Content */}
     <div className="hero-content">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -52,7 +66,7 @@ const HeroSection = () => (
         transition={{ duration: 1, delay: 0.4 }}
         className="hero-description"
       >
-        Sun Max energy (Pvt.)Ltd. Reliable Solar Panel Suppliers in Sri Lanka.
+        Sun Max energy (Pvt.) Ltd. Reliable Solar Panel Suppliers in Sri Lanka.
         Investment your future
       </motion.p>
 
@@ -64,7 +78,7 @@ const HeroSection = () => (
         <button
           className="hero-button-analysis"
           onClick={() => {
-            const section = document.getElementById("gallery"); // Or whatever ID your form section uses
+            const section = document.getElementById("gallery");
             if (section) {
               section.scrollIntoView({ behavior: "smooth" });
             }

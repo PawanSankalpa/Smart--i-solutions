@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #c0af43 0%, rgb(33, 149, 203) 50%, #07074c 100%);
+  background: linear-gradient(135deg,  #07074c 0%, rgb(33, 149, 203) 50%, #07074c 100%);
   color: #ffffff;
   overflow: hidden;
   padding: 2rem;
@@ -30,14 +30,35 @@
 
 .hero-badge {
   display: inline-block;
-  background-color: #f7cd10f4;
-  color: #1e3a8a;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  background-color: #f7cd10; /* solid golden yellow */
+  color: #1e3a8a; /* deep navy */
+  font-family: "Poppins", "Roboto Mono", "Segoe UI", sans-serif; /* modern, square-like fonts */
+  font-style: normal;
+  font-size: 1.4rem; /* smaller than before */
+  font-weight: 700;
+  letter-spacing: 1px; /* more breathing space, square fonts look cleaner */
+  padding: 0.5rem 1.2rem; /* smaller, more compact padding */
+  border-radius: 8px; /* subtle rounding for a modern rectangular shape */
   margin-bottom: 1rem;
+
+  /* 3D effect */
+  box-shadow: 
+    0 5px 8px rgba(0, 0, 0, 0.2),   /* main shadow */
+    inset 0 -2px 0 rgba(255, 255, 255, 0.3), /* subtle inner highlight */
+    0 4px 6px rgba(0, 0, 0, 0.15);   /* extra depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* optional hover effect for more 3D feel */
+  cursor: pointer;
 }
+.hero-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.25), 
+    inset 0 -2px 0 rgba(255, 255, 255, 0.3);
+}
+
+
 
 .hero-badge-icon {
   vertical-align: middle;
@@ -183,5 +204,51 @@
 @media (max-width: 768px) {
   .hero-background-panel-item {
     transform: scale(0.8);
+  }
+}
+
+/* Background Logo Styling */
+.hero-logo-bg {
+  position: absolute;
+  top: 40%;          /* Vertically center in the left area */
+  left: 3%;          /* Slightly away from left edge */
+  transform: translateY(-50%);
+  max-width: 220px;  /* Maximum width */
+  width: 20%;        /* Scales relative to screen width */
+  height: auto;      /* Keep aspect ratio */
+  /* opacity: 0.12;     Subtle background look */
+  z-index: 0;        /* Behind all content */
+  pointer-events: none; /* Click-through */
+  border-radius: 50%; /* Optional: circular effect */
+}
+
+/* Smaller screens */
+@media (max-width: 1024px) {
+  .hero-logo-bg {
+    max-width: 180px;
+    width: 25%;
+    left: 4%;
+    top: 45%;
+    opacity: 0.1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-logo-bg {
+    max-width: 120px;
+    width: 30%;
+    left: 3%;
+    top: 40%;
+    opacity: 0.08;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo-bg {
+    max-width: 80px;
+    width: 35%;
+    left: 2%;
+    top: 35%;
+    opacity: 0.07;
   }
 }
