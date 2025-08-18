@@ -50,7 +50,7 @@ const NavigationBar = () => {
       </div>
 
       {/* Navigation Links */}
-      <div className={`navbar-links ${isOpen ? "open" : ""}`}>
+      <div  className={`navbar-links ${isOpen ? "open" : ""}`}>
         <a className="home-link" onClick={() => scrollToSection("hero")}>Home</a>
         <a className="stats-link" onClick={() => scrollToSection("stats")}>Stats</a>
         <a className="features-link" onClick={() => scrollToSection("features")}>Features</a>
