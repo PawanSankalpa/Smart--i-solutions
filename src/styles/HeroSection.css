@@ -40,6 +40,7 @@
   padding: 0.5rem 1.2rem; /* smaller, more compact padding */
   border-radius: 8px; /* subtle rounding for a modern rectangular shape */
   margin-bottom: 1rem;
+  margin-top: 2rem;
 
   /* 3D effect */
   box-shadow: 
@@ -251,4 +252,32 @@
     top: 35%;
     opacity: 0.07;
   }
+}
+
+/* Photos Button Styling */
+.hero-button-photos {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: all 0.3s ease;
+
+  background-color: #f5c60b; /* Bright blue for visibility */
+  color: #1e3a8a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-button-photos:hover {
+  background-color: #e0b200; /* Darker blue on hover */
+  transform: translateY(-2px);
+}
+
+.hero-button-photos .hero-button-icon {
+  margin-left: 0.5rem;
+  vertical-align: middle;
 }

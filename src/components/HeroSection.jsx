@@ -8,6 +8,7 @@ import {
   Leaf,
   Bolt,
   Phone,
+  Images,
 } from "lucide-react";
 import "../styles/HeroSection.css";
 // import NavigationBar from "./NavigationBar.jsx";
@@ -75,6 +76,20 @@ const HeroSection = () => (
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
+
+        <button
+          className="hero-button-photos"
+          onClick={() => {
+            const section = document.getElementById("photos");
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
+          View Our Work
+          <Images size={20} className="hero-button-icon" />
+        </button>
+
         <button
           className="hero-button-analysis"
           onClick={() => {
@@ -87,7 +102,9 @@ const HeroSection = () => (
           Explore Our Services
           <Bolt size={20} className="hero-button-icon" />
         </button>
-        <a href="tel:+94769436431" className="hero-button-call-link">
+        
+
+        <a href="tel:+94713848336" className="hero-button-call-link">
           <button className="hero-button-call">
             Call Us Today
             <Phone size={20} className="hero-button-icon" />

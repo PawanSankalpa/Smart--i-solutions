@@ -45,8 +45,9 @@ const NavigationBar = () => {
           <a onClick={() => scrollToSection("stats")}>Stats</a>
           <a onClick={() => scrollToSection("features")}>Features</a>
           <a onClick={() => scrollToSection("process")}>Process</a>
+          <a onClick={() => scrollToSection("process")}>Photos</a>
           <a onClick={() => scrollToSection("testimonials")}>Testimonials</a>
-          <a onClick={() => scrollToSection("gallery")}>Gallery</a>
+          <a onClick={() => scrollToSection("gallery")}>Services</a>
           <a onClick={() => scrollToSection("faq")}>FAQ</a>
           <a onClick={() => scrollToSection("cta")} className="get-started-link">
             Get Started

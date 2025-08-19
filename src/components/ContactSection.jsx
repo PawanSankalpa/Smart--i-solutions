@@ -40,11 +40,11 @@ const ContactSection = () => (
 
           <div className="contact-item">
             <span className="contact-icon">📞</span>
-            <a href="tel:+947066037207" style={{ textDecoration: "none" }}>
+            <a href="tel:+94713848336" style={{ textDecoration: "none" }}>
               <div>
                 <h3>Call Us</h3>
 
-                <p>+94 7066037207</p>
+                <p>+94 713848336</p>
               </div>
             </a>
           </div>
@@ -52,12 +52,12 @@ const ContactSection = () => (
           <div className="contact-item">
             <span className="contact-icon">✉️</span>
             <a
-              href="mailto:sunmax.solar.srilanka@gmail.com"
+              href="mailto:sunmaxsolarcompany@gmail.com"
               style={{ textDecoration: "none" }}
             >
               <div>
                 <h3>Email Us</h3>
-                <p>sunmax.solar.srilanka@gmail.com</p>
+                <p>sunmaxsolarcompany@gmail.com</p>
               </div>
             </a>
           </div>

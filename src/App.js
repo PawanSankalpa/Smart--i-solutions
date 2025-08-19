@@ -10,6 +10,7 @@ import FAQSection from "./components/FAQSection";
 import CTA from "./components/CTA";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import Photos from "./components/Photos.jsx";
 
 
 import "./App.css";
@@ -21,8 +22,9 @@ function App() {
       <NavigationBar />
       <HeroSection />
       <StatsSection />
-       <FeaturesSection />
+      <FeaturesSection />
       <ProcessSection />
+      <Photos />
       <TestimonialSection />
       <GallerySection />
       <FAQSection />

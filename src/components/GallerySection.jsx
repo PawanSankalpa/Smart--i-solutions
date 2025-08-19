@@ -29,7 +29,7 @@ const GallerySection = () => {
       caption: "Ground Mount with Trackers"
     },
     {
-      src: "https://au.solaxpower.com/uploads/image/20230912/17/sem.webp",
+      src: "https://regenpower.com/wp-content/uploads/2022/09/solar-performance-monitoring.jpg",
       alt: "Monitoring system",
       caption: "Real-time Monitoring"
     }

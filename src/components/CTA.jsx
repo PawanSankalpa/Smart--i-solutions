@@ -14,7 +14,7 @@ const CTA = () => (
         </p>
         <div className="cta-buttons">
           <a
-            href="mailto:smartisolutions.lk@gmail.com"
+            href="mailto:sunmax.solar.srilanka@gmail.com"
             style={{ textDecoration: "none" }}
           >
             <button className="cta-button-primary">
@@ -22,7 +22,7 @@ const CTA = () => (
             </button>
           </a>
           <a
-            href="tel:+94769436431"
+            href="tel:+94713848336"
             style={{ color: "inherit", textDecoration: "none" }}
           >
             <button className="cta-button-secondary">
