@@ -228,9 +228,9 @@
   }
 
   .navbar-section .navbar-links {
-    width: 80%;
+    width: 60%;
     max-width: none;
-    height: 70vh;
+    height: 60vh;
     padding: 4.5rem 1.5rem 1.5rem;
   }
 }
