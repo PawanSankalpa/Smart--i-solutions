@@ -7,57 +7,61 @@ const processSteps = [
   {
     step: "1",
     title: "Free Consultation",
-    description: "Our solar experts assess your needs and provide a customized quote",
-    icon: <Phone size={24} />,
+    description: "Our solar experts assess your needs and provide a customized quote.",
+    icon: <Phone size={24} aria-hidden="true" />,
   },
   {
     step: "2",
     title: "Custom Design",
-    description: "Engineers create a system optimized for your property's unique characteristics",
-    icon: <Home size={24} />,
+    description: "Engineers create a system optimized for your property's unique characteristics.",
+    icon: <Home size={24} aria-hidden="true" />,
   },
   {
     step: "3",
     title: "Permitting",
-    description: "We handle all paperwork and approvals with your local authorities",
-    icon: <HardHat size={24} />,
+    description: "We handle all paperwork and approvals with your local authorities.",
+    icon: <HardHat size={24} aria-hidden="true" />,
   },
   {
     step: "4",
     title: "Installation",
-    description: "Certified technicians install your system with minimal disruption",
-    icon: <Zap size={24} />,
+    description: "Certified technicians install your system with minimal disruption.",
+    icon: <Zap size={24} aria-hidden="true" />,
   },
   {
     step: "5",
     title: "Activation",
-    description: "System commissioning and orientation on monitoring your production",
-    icon: <Bolt size={24} />,
+    description: "System commissioning and orientation on monitoring your production.",
+    icon: <Bolt size={24} aria-hidden="true" />,
   },
 ];
 
 const ProcessSection = () => (
-  <section id="process" className="process-section">
+  <section id="process" className="process-section" aria-labelledby="process-heading">
     <div className="container">
-      <motion.div
+      {/* Section Header */}
+      <motion.header
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="section-header"
       >
-        <h2 className="section-title">Our Simple 5-Step Process</h2>
+        <h2 id="process-heading" className="section-title">
+          Our Simple 5-Step Process
+        </h2>
         <p className="section-subtitle">
-          From initial consultation to flipping the switch, we make going solar effortless
+          From initial consultation to flipping the switch, we make going solar effortless.
         </p>
-      </motion.div>
+      </motion.header>
 
+      {/* Timeline */}
       <div className="timeline">
-        <div className="timeline-line"></div>
+        <div className="timeline-line" aria-hidden="true"></div>
 
-        <div className="timeline-steps">
+        <ol className="timeline-steps">
           {processSteps.map((step, index) => (
-            <motion.div
+            <motion.li
               key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -65,21 +69,20 @@ const ProcessSection = () => (
               viewport={{ once: true }}
               className={`timeline-step ${index % 2 === 0 ? "left" : "right"}`}
             >
-              <div className="step-number">{step.step}</div>
+              <div className="step-number" aria-label={`Step ${step.step}`}>{step.step}</div>
 
-              <div className="step-card">
+              <article className="step-card">
                 <div className="step-content">
-                  <div className="step-header">
+                  <header className="step-header">
                     <div className="step-icon">{step.icon}</div>
                     <h3 className="step-title">{step.title}</h3>
-                  </div>
+                  </header>
                   <p className="step-description">{step.description}</p>
                 </div>
-              </div>
-
-            </motion.div>
+              </article>
+            </motion.li>
           ))}
-        </div>
+        </ol>
       </div>
     </div>
   </section>
