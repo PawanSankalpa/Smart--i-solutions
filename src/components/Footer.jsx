@@ -1,75 +1,44 @@
 import React from "react";
 import "../styles/Footer.css";
 
+// Social Icon Components
 const FacebookIcon = () => (
   <a
-    href="https://www.facebook.com/share/1CLvCCpxNX/" // 👈 Replace with your actual Facebook profile/page URL
+    href="https://www.facebook.com/share/1CLvCCpxNX/" 
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Visit Facebook Profile"
-    style={{ color: "inherit", textDecoration: "none" }} // 👈 Prevent default blue and underline
+    style={{ color: "inherit", textDecoration: "none" }}
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
     </svg>
   </a>
 );
 
-
 const TwitterIcon = () => (
   <a
-    href="https://twitter.com/your-username" // 👈 Replace with your real Twitter profile URL
+    href="https://twitter.com/your-username"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Visit Twitter Profile"
-    style={{ color: "inherit", textDecoration: "none" }} // 👈 Prevent blue color & underline
+    style={{ color: "inherit", textDecoration: "none" }}
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
     </svg>
   </a>
 );
 
-
 const InstagramIcon = () => (
   <a
-    href="https://www.instagram.com/your-username" // 👈 Replace with your real Instagram URL
+    href="https://www.instagram.com/your-username"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Visit Instagram Profile"
-    style={{ color: "inherit", textDecoration: "none" }} // 👈 Prevent blue link styling
+    style={{ color: "inherit", textDecoration: "none" }}
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -77,27 +46,15 @@ const InstagramIcon = () => (
   </a>
 );
 
-
-// Inline SVG for Linkedin icon
 const LinkedinIcon = () => (
   <a
-    href="https://www.linkedin.com/in/your-username/" // <-- Replace with your actual LinkedIn URL
+    href="https://www.linkedin.com/in/your-username/"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Visit LinkedIn Profile"
-    style={{ color: "inherit" }} // remove the blue color that ocmes with the a tag
+    style={{ color: "inherit" }}
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect x="2" y="9" width="4" height="12" />
       <circle cx="4" cy="4" r="2" />
@@ -109,6 +66,7 @@ const Footer = () => (
   <footer className="footer-section">
     <div className="footer-container">
       <div className="footer-grid">
+        {/* Column 1 */}
         <div className="footer-col">
           <h3 className="footer-heading">Sun Max Energy</h3>
           <p className="footer-description">
@@ -116,119 +74,66 @@ const Footer = () => (
             for homes and businesses.
           </p>
           <div className="social-links">
-            <a href="#" className="social-icon" aria-label="Facebook">
-              <FacebookIcon />
-            </a>
-            <a href="#" className="social-icon" aria-label="Twitter">
-              <TwitterIcon />
-            </a>
-            <a href="#" className="social-icon" aria-label="Instagram">
-              <InstagramIcon />
-            </a>
-            <a href="#" className="social-icon" aria-label="LinkedIn">
-              <LinkedinIcon />
-            </a>
+            <FacebookIcon />
+            <TwitterIcon />
+            <InstagramIcon />
+            <LinkedinIcon />
           </div>
         </div>
 
+        {/* Column 2 */}
         <div className="footer-col">
           <h3 className="footer-heading">Services</h3>
           <ul className="footer-links">
-            <li>
-              <a href="#" className="footer-link">
-                Residential Solar
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Commercial Solar
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Solar Batteries
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                System Monitoring
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Maintenance
-              </a>
-            </li>
+            <li><a href="#" className="footer-link">Residential Solar</a></li>
+            <li><a href="#" className="footer-link">Commercial Solar</a></li>
+            <li><a href="#" className="footer-link">Solar Batteries</a></li>
+            <li><a href="#" className="footer-link">System Monitoring</a></li>
+            <li><a href="#" className="footer-link">Maintenance</a></li>
           </ul>
         </div>
 
+        {/* Column 3 */}
         <div className="footer-col">
           <h3 className="footer-heading">Company</h3>
           <ul className="footer-links">
-            <li>
-              <a href="#" className="footer-link">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Our Team
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Careers
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Press
-              </a>
-            </li>
+            <li><a href="#" className="footer-link">About Us</a></li>
+            <li><a href="#" className="footer-link">Our Team</a></li>
+            <li><a href="#" className="footer-link">Careers</a></li>
+            <li><a href="#" className="footer-link">Blog</a></li>
+            <li><a href="#" className="footer-link">Press</a></li>
           </ul>
         </div>
 
+        {/* Column 4 */}
         <div className="footer-col">
           <h3 className="footer-heading">Legal</h3>
           <ul className="footer-links">
-            <li>
-              <a href="#" className="footer-link">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Terms of Service
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Financing Options
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Warranty
-              </a>
-            </li>
-            <li>
-              <a href="#" className="footer-link">
-                Sitemap
-              </a>
-            </li>
+            <li><a href="#" className="footer-link">Privacy Policy</a></li>
+            <li><a href="#" className="footer-link">Terms of Service</a></li>
+            <li><a href="#" className="footer-link">Financing Options</a></li>
+            <li><a href="#" className="footer-link">Warranty</a></li>
+            <li><a href="#" className="footer-link">Sitemap</a></li>
           </ul>
         </div>
       </div>
 
+      {/* GaleGrid Highlighted Section */}
+      <div className="footer-madeby">
+        <a
+          href="https://www.galegrid.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GaleGrid Web Design"
+          className="madeby-link"
+        >
+          <span className="madeby-badge">Built by GaleGrid</span>
+          <span className="madeby-cta">Need a website? Let’s talk →</span>
+        </a>
+      </div>
+
       <div className="footer-bottom">
-        <p>
-          © {new Date().getFullYear()} SMART I-SOLUTIONS. All rights reserved.
-        </p>
+        <p>© {new Date().getFullYear()} SUN MAX ENERGY. All rights reserved.</p>
       </div>
     </div>
   </footer>
