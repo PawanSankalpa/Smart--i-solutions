@@ -1,5 +1,5 @@
 import React from "react";
-// import NavigationBar from "./components/NavigationBar.jsx";
+import NavigationBar from "./components/NavigationBar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import StatsSection from "./components/StatsSection";
 import FeaturesSection from "./components/FeaturesSection.jsx";
@@ -11,12 +11,14 @@ import CTA from "./components/CTA";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
+
 import "./App.css";
 
 function App() {
   return (
     <div className="app-container">
       {/* <NavigationBar /> */}
+      <NavigationBar />
       <HeroSection />
       <StatsSection />
        <FeaturesSection />

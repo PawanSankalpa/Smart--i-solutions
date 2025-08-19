@@ -10,12 +10,12 @@ import {
   Phone,
 } from "lucide-react";
 import "../styles/HeroSection.css";
-import NavigationBar from "./NavigationBar.jsx";
+// import NavigationBar from "./NavigationBar.jsx";
 import Logo from "../assets/images/logo.jpeg"; // <-- Import your logo
 
 const HeroSection = () => (
   <section id="hero" className="hero-section">
-    <NavigationBar />
+    {/* <NavigationBar /> */}
 
     {/* Background Logo */}
     <motion.img
