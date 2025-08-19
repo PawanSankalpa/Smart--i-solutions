@@ -81,7 +81,7 @@
 .navbar-section .navbar-links a:hover,
 .navbar-section .navbar-links a:focus {
   transform: translateY(-0.2rem);
-  background: rgba(255, 255, 255, 0.12);
+  /* background: rgba(255, 255, 255, 0.12); */
 }
 
 /* Underline effect */
@@ -147,11 +147,11 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0.4rem;
-    padding: 5rem 2rem 2rem;
+    padding: 5rem 0.5rem 0.5rem;
     box-shadow: -0.625rem 0 1.875rem rgba(0, 0, 0, 0.5);
     transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1100;
-    font-size: 0.5rem;
+    font-size: 0.2rem;
     overflow-y: auto;
   }
 
