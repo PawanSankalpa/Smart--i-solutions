@@ -52,12 +52,12 @@ const ContactSection = () => (
           <div className="contact-item">
             <span className="contact-icon">✉️</span>
             <a
-              href="mailto:sunmaxsolarcompany@gmail.com"
+              href="mailto:info@sunmaxenergy.lk"
               style={{ textDecoration: "none" }}
             >
               <div>
                 <h3>Email Us</h3>
-                <p>sunmaxsolarcompany@gmail.com</p>
+                <p>info@sunmaxenergy.lk</p>
               </div>
             </a>
           </div>

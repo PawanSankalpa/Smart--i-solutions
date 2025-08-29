@@ -14,7 +14,7 @@ const CTA = () => (
         </p>
         <div className="cta-buttons">
           <a
-            href="mailto:sunmax.solar.srilanka@gmail.com"
+            href="mailto:info@sunmaxenergy.lk"
             style={{ textDecoration: "none" }}
           >
             <button className="cta-button-primary">
