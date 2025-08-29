@@ -48,7 +48,7 @@ const HeroSection = () => (
       transition={{ duration: 0.8, delay: 0.5 }}
     >
       <a
-        href="https://www.facebook.com/sunmaxenergy" // Replace with your Facebook page URL
+        href="https://www.facebook.com/share/1CLvCCpxNX/" // Replace with your Facebook page URL
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Visit our Facebook page"
