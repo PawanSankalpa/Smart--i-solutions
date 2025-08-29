@@ -22,7 +22,7 @@
 
 .stat-item {
   background: rgba(255, 255, 255, 0.359);
-  top: -40%;
+  top: -35%;
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 2rem;

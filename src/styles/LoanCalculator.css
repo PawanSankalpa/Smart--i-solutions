@@ -1,185 +1,298 @@
+/* Loan Calculator Styles - Matches SunMax Energy Website */
 .loan-calculator {
-  max-width: 640px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
-  box-sizing: border-box;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .loan-calculator h2 {
+  color: #1a936f; /* SunMax green color */
   text-align: center;
-  margin-bottom: 1.2rem;
-  color: #e67e22;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-.loan-calculator label {
-  display: block;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.loan-calculator input[type="text"],
-.loan-calculator input[type="number"] {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.4rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-.loan-calculator input:focus {
-  border-color: #2c3e50;
-  box-shadow: 0 0 6px rgba(44,62,80,0.3);
-  outline: none;
-}
-
-.loan-calculator button {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1.05rem;
-  color: #fff;
-  background: #e67e22;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 1rem;
-  transition: background 0.2s ease;
-}
-
-.loan-calculator button:hover {
-  background: #d35400;
-}
-
-.loan-calculator hr {
-  border: none;
-  border-top: 1px solid #eee;
-  margin: 1.2rem 0;
-}
-
-/* Slider */
-.slider-container {
-  position: relative;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.slider-axis {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 2px;
-  background: #ccc;
-  outline: none;
-  margin: 0;
-}
-
-.slider-axis::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #e67e22;
-  cursor: pointer;
-  margin-top: -9px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.slider-axis::-webkit-slider-thumb:hover {
-  background: #d35400;
-  transform: scale(1.2);
-}
-
-.slider-axis::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #e67e22;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-.ticks {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
-  font-size: 0.85rem;
-  color: #666;
-}
-
-/* Monthly Payment Block */
-.monthly-payment-block {
-  background: #f2f9ff;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #1a5276;
-}
-
-.monthly-payment-block .payment {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #e67e22;
-}
-
-/* Result Blocks */
-.results-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-}
-
-.result-block {
-  flex: 1 1 calc(33% - 1rem);
-  background: #f2f9ff;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  color: #1a5276;
-  min-width: 120px;
-}
-
-.result-block strong {
-  display: block;
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-.result-block p {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #e67e22;
-}
-
-/* Placeholder text */
-.placeholder {
+.calculator-description {
   text-align: center;
-  color: #777;
+  color: #666;
+  margin-bottom: 2rem;
   font-size: 0.95rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .results-container {
-    flex-direction: column;
+.input-group {
+  margin-bottom: 1.8rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.input-with-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.input-with-slider input[type="text"],
+.input-with-slider input[type="number"] {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-with-slider input[type="text"]:focus,
+.input-with-slider input[type="number"]:focus {
+  outline: none;
+  border-color: #1a936f;
+  box-shadow: 0 0 0 3px rgba(26, 147, 111, 0.2);
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  margin: 0.8rem 0;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1a936f;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #147a5d;
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1a936f;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #147a5d;
+  transform: scale(1.1);
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: -5px;
+}
+
+/* Enhanced Years Selector */
+.years-selector {
+  position: relative;
+}
+
+.years-selector .x-axis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.term-option {
+  position: relative;
+  padding: 0.7rem 1.2rem;
+  background: linear-gradient(to bottom, #f9f9f9, #f0f0f0);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px; /* Ensures consistent width */
+}
+
+.term-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #1a936f, #147a5d);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.term-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: #1a936f;
+  border-color: #1a936f;
+}
+
+.term-option:hover::before {
+  opacity: 0.05;
+}
+
+.term-option.active {
+  background: linear-gradient(to bottom, #1a936f, #147a5d);
+  color: white;
+  border-color: #1a936f;
+  box-shadow: 0 4px 12px rgba(26, 147, 111, 0.3);
+  transform: translateY(-2px);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
   }
-  .result-block {
-    width: 100%;
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 6px rgba(255, 107, 107, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+/* Selection indicator animation */
+.selection-indicator {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #1a936f, #0f5132);
+  border-radius: 3px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.result-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-left: 4px solid #1a936f;
+}
+
+.result-card h3 {
+  margin-top: 0;
+  color: #1a936f;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #eee;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.highlight {
+  font-weight: 700;
+  color: #1a936f;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .loan-calculator {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .years-selector .x-axis {
+    gap: 0.5rem;
+  }
+  
+  .term-option {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    min-width: 44px; /* Square size for mobile */
+    height: 44px;
+    border-radius: 6px;
   }
 }
 
 @media (max-width: 480px) {
   .loan-calculator {
     padding: 1rem;
-    margin: 1rem;
   }
+  
+  .years-selector .x-axis {
+    gap: 0.4rem;
+  }
+  
+  .term-option {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    min-width: 0.2cm; /* Slightly smaller for very small screens */
+    height: 30px;
+    flex: 0 0 auto; /* Don't grow or shrink, maintain exact size */
+  }
+  
+  /* Improved mobile range labels - side by side */
+  .range-labels {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0;
+
+  }
+  
+  .result-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+.term-option, .slider, input {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+.term-option:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 147, 111, 0.3);
 }

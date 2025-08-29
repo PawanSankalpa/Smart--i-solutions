@@ -1,127 +1,163 @@
-import React, { useState } from 'react';
-import '../styles/LoanCalculator.css';
+import React, { useState, useMemo } from "react";
+import "../styles/LoanCalculator.css";
 
-export default function LoanCalculator() {
-  const [amount, setAmount] = useState('');
-  const [interestRate, setInterestRate] = useState('');
-  const [years, setYears] = useState(3); // Default 3 years
-  const [monthlyPayment, setMonthlyPayment] = useState(null);
-  const [totalPayment, setTotalPayment] = useState(null);
-  const [totalInterest, setTotalInterest] = useState(null);
+const LoanCalculator = () => {
+  const [loanData, setLoanData] = useState({
+    principal: 500000,
+    interestRate: 5,
+    years: 5
+  });
 
-  // Better format function that preserves decimals
-  const formatNumber = (value) => {
-    if (!value) return '';
-    const [integer, decimal] = value.toString().split('.');
-    const formattedInt = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return decimal ? `${formattedInt}.${decimal}` : formattedInt;
+  // Format number with commas
+  const formatNumber = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  const handleAmountChange = (e) => {
-    // Remove all non-digit except decimal point
-    const cleaned = e.target.value.replace(/[^\d.]/g, '');
-    setAmount(cleaned);
+  // Parse formatted number back to raw number
+  const parseFormattedNumber = (formattedNum) => {
+    return Number(formattedNum.replace(/,/g, ''));
   };
 
-  const calculateLoan = () => {
-    const principal = parseFloat(amount);
-    const annualRate = parseFloat(interestRate);
-    const yearsInt = parseInt(years);
-
-    if (!principal || !annualRate || !yearsInt) {
-      setMonthlyPayment(null);
-      setTotalPayment(null);
-      setTotalInterest(null);
-      return;
+  const handleInputChange = (field, value) => {
+    if (field === "principal") {
+      // Remove commas and parse to number
+      const numericValue = parseFormattedNumber(value);
+      setLoanData(prev => ({
+        ...prev,
+        [field]: numericValue
+      }));
+    } else {
+      setLoanData(prev => ({
+        ...prev,
+        [field]: Number(value)
+      }));
     }
-
-    // Simple Interest
-    const interest = principal * (annualRate / 100) * yearsInt;
-    const total = principal + interest;
-    const monthly = total / (yearsInt * 12);
-
-    setTotalInterest(interest.toFixed(2));
-    setTotalPayment(total.toFixed(2));
-    setMonthlyPayment(monthly.toFixed(2));
   };
+
+  const { monthlyPayment, totalPayment, totalInterest } = useMemo(() => {
+    const { principal, interestRate, years } = loanData;
+    const monthlyRate = interestRate / 100 / 12;
+    const months = years * 12;
+    
+    if (principal <= 0 || interestRate <= 0 || years <= 0) {
+      return { monthlyPayment: 0, totalPayment: 0, totalInterest: 0 };
+    }
+    
+    const monthlyPayment = 
+      (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
+    const totalPayment = monthlyPayment * months;
+    const totalInterest = totalPayment - principal;
+    
+    return {
+      monthlyPayment: monthlyPayment.toFixed(2),
+      totalPayment: totalPayment.toFixed(2),
+      totalInterest: totalInterest.toFixed(2)
+    };
+  }, [loanData]);
 
   return (
     <div className="loan-calculator">
-      <h2>Sun Max Energy Loan Calculator</h2>
+      <h2>Solar Loan Calculator</h2>
+      <p className="calculator-description">
+        Estimate your monthly payments for a solar system with our easy-to-use calculator
+      </p>
 
-      <label>
-        Loan Amount
-        <input
-          type="text"
-          value={formatNumber(amount)}
-          onChange={handleAmountChange}
-          placeholder="Enter amount (LKR)"
-        />
-      </label>
-
-      <label>
-        Annual Interest Rate (%)
-        <input
-          type="number"
-          value={interestRate}
-          onChange={(e) => setInterestRate(e.target.value)}
-          placeholder="0.00"
-        />
-      </label>
-
-      <label className="slider-label">
-        Loan Term: <strong>{years} Years</strong>
-        <div className="slider-container">
+      <div className="input-group">
+        <label htmlFor="loan-amount">Loan Amount (LKR)</label>
+        <div className="input-with-slider">
+          <input
+            id="loan-amount"
+            type="text"
+            value={formatNumber(loanData.principal)}
+            onChange={(e) => {
+              // Allow only numbers and commas
+              const value = e.target.value.replace(/[^0-9,]/g, '');
+              handleInputChange("principal", value);
+            }}
+            onBlur={(e) => {
+              // Ensure the value is properly formatted on blur
+              if (e.target.value === '') {
+                handleInputChange("principal", "10000");
+              }
+            }}
+          />
           <input
             type="range"
-            min="1"
-            max="10"
-            step="1"
-            value={years}
-            onChange={(e) => setYears(e.target.value)}
-            className="slider-axis"
+            min="10000"
+            max="10000000"
+            step="10000"
+            value={loanData.principal}
+            onChange={(e) => handleInputChange("principal", e.target.value)}
+            className="slider"
           />
-          <div className="ticks">
-            {Array.from({ length: 10 }, (_, i) => (
-              <span key={i}>{i + 1}</span>
-            ))}
+          <div className="range-labels">
+            <span>LKR 10,000</span>
+            <span>LKR 10,000,000</span>
           </div>
         </div>
-      </label>
+      </div>
 
-      <button onClick={calculateLoan}>Calculate</button>
-
-      <hr />
-
-      {monthlyPayment !== null ? (
-        <>
-          <div className="monthly-payment-block">
-            <strong>Estimated Monthly Payment:</strong>
-            <p className="payment">LKR {formatNumber(monthlyPayment)}</p>
+      <div className="input-group">
+        <label htmlFor="interest-rate">Interest Rate (%)</label>
+        <div className="input-with-slider">
+          <input
+            id="interest-rate"
+            type="number"
+            min="0.1"
+            max="30"
+            step="0.1"
+            value={loanData.interestRate}
+            onChange={(e) => handleInputChange("interestRate", e.target.value)}
+          />
+          <input
+            type="range"
+            min="0.1"
+            max="30"
+            step="0.1"
+            value={loanData.interestRate}
+            onChange={(e) => handleInputChange("interestRate", e.target.value)}
+            className="slider"
+          />
+          <div className="range-labels">
+            <span>0.1%</span>
+            <span>30%</span>
           </div>
+        </div>
+      </div>
 
-          <div className="results-container">
-            <div className="result-block">
-              <strong>Total Loan Amount</strong>
-              <p>LKR {formatNumber(amount)}</p>
-            </div>
-            <div className="result-block">
-              <strong>Total Interest</strong>
-              <p>LKR {formatNumber(totalInterest)}</p>
-            </div>
-            <div className="result-block">
-              <strong>Total Payment (with Interest)</strong>
-              <p>LKR {formatNumber(totalPayment)}</p>
-            </div>
-            <div className="result-block">
-              <strong>Loan Term</strong>
-              <p>{years} Years</p>
-            </div>
-          </div>
-        </>
-      ) : (
-        <div className="placeholder">Enter details to calculate your payment</div>
-      )}
+      <div className="input-group years-selector">
+        <label>Loan Term (Years)</label>
+        <div className="x-axis">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((year) => (
+            <button
+              key={year}
+              type="button"
+              className={`term-option ${loanData.years === year ? "active" : ""}`}
+              onClick={() => handleInputChange("years", year)}
+            >
+              {year}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="result-card">
+        <h3>Your Loan Estimate</h3>
+        <div className="result-item">
+          <span>Monthly Payment:</span>
+          <span className="highlight">LKR {formatNumber(monthlyPayment)}</span>
+        </div>
+        <div className="result-item">
+          <span>Total Payment:</span>
+          <span>LKR {formatNumber(totalPayment)}</span>
+        </div>
+        <div className="result-item">
+          <span>Total Interest:</span>
+          <span>LKR {formatNumber(totalInterest)}</span>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default LoanCalculator;
