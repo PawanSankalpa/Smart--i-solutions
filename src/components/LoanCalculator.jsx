@@ -4,48 +4,58 @@ import '../styles/LoanCalculator.css';
 export default function LoanCalculator() {
   const [amount, setAmount] = useState('');
   const [interestRate, setInterestRate] = useState('');
-  const [years, setYears] = useState('');
+  const [years, setYears] = useState(3); // Default 3 years
   const [monthlyPayment, setMonthlyPayment] = useState(null);
+  const [totalPayment, setTotalPayment] = useState(null);
+  const [totalInterest, setTotalInterest] = useState(null);
 
+  // Better format function that preserves decimals
   const formatNumber = (value) => {
-    // Remove all non-digits
-    const numericValue = value.replace(/\D/g, '');
-    // Format with commas
-    return numericValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    if (!value) return '';
+    const [integer, decimal] = value.toString().split('.');
+    const formattedInt = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return decimal ? `${formattedInt}.${decimal}` : formattedInt;
   };
 
   const handleAmountChange = (e) => {
-    setAmount(formatNumber(e.target.value));
+    // Remove all non-digit except decimal point
+    const cleaned = e.target.value.replace(/[^\d.]/g, '');
+    setAmount(cleaned);
   };
 
   const calculateLoan = () => {
-    const principal = parseFloat(amount.replace(/,/g, ''));
-    const rate = parseFloat(interestRate) / 100 / 12;
-    const n = parseInt(years) * 12;
+    const principal = parseFloat(amount);
+    const annualRate = parseFloat(interestRate);
+    const yearsInt = parseInt(years);
 
-    if (!principal || !rate || !n) {
+    if (!principal || !annualRate || !yearsInt) {
       setMonthlyPayment(null);
+      setTotalPayment(null);
+      setTotalInterest(null);
       return;
     }
 
-    const payment =
-      (principal * rate * Math.pow(1 + rate, n)) /
-      (Math.pow(1 + rate, n) - 1);
+    // Simple Interest
+    const interest = principal * (annualRate / 100) * yearsInt;
+    const total = principal + interest;
+    const monthly = total / (yearsInt * 12);
 
-    setMonthlyPayment(payment.toFixed(2));
+    setTotalInterest(interest.toFixed(2));
+    setTotalPayment(total.toFixed(2));
+    setMonthlyPayment(monthly.toFixed(2));
   };
 
   return (
     <div className="loan-calculator">
-      <h2>Solar Loan Calculator</h2>
+      <h2>Sun Max Energy Loan Calculator</h2>
 
       <label>
         Loan Amount
         <input
           type="text"
-          value={amount}
+          value={formatNumber(amount)}
           onChange={handleAmountChange}
-          placeholder="Enter amount"
+          placeholder="Enter amount (LKR)"
         />
       </label>
 
@@ -55,35 +65,28 @@ export default function LoanCalculator() {
           type="number"
           value={interestRate}
           onChange={(e) => setInterestRate(e.target.value)}
-          placeholder="e.g. 8.5"
+          placeholder="0.00"
         />
       </label>
 
-      <label>
-        Loan Term (Years)
-        <select value={years} onChange={(e) => setYears(e.target.value)}>
-          <option value="">Select years</option>
-          <option value="1">1 Years</option>
-          <option value="2">2 Years</option>
-          <option value="3">3 Years</option>
-          <option value="4">4 Years</option>
-          <option value="5">5 Years</option>
-          <option value="6">6 Years</option>
-          <option value="7">7 Years</option>
-          <option value="8">8 Years</option>
-          <option value="9">9 Years</option>
-          <option value="10">10 Years</option>
-          <option value="11">11 Years</option>
-          <option value="12">12 Years</option>
-          <option value="13">13 Years</option>
-          <option value="14">14 Years</option>
-          <option value="15">15 Years</option>
-          <option value="16">16 Years</option>
-          <option value="17">17 Years</option>
-          <option value="18">18 Years</option>
-          <option value="19">19 Years</option>
-          <option value="20">20 Years</option>
-        </select>
+      <label className="slider-label">
+        Loan Term: <strong>{years} Years</strong>
+        <div className="slider-container">
+          <input
+            type="range"
+            min="1"
+            max="10"
+            step="1"
+            value={years}
+            onChange={(e) => setYears(e.target.value)}
+            className="slider-axis"
+          />
+          <div className="ticks">
+            {Array.from({ length: 10 }, (_, i) => (
+              <span key={i}>{i + 1}</span>
+            ))}
+          </div>
+        </div>
       </label>
 
       <button onClick={calculateLoan}>Calculate</button>
@@ -91,10 +94,31 @@ export default function LoanCalculator() {
       <hr />
 
       {monthlyPayment !== null ? (
-        <div className="result">
-          <strong>Estimated Monthly Payment:</strong>
-          <div className="payment">LKR {monthlyPayment}</div>
-        </div>
+        <>
+          <div className="monthly-payment-block">
+            <strong>Estimated Monthly Payment:</strong>
+            <p className="payment">LKR {formatNumber(monthlyPayment)}</p>
+          </div>
+
+          <div className="results-container">
+            <div className="result-block">
+              <strong>Total Loan Amount</strong>
+              <p>LKR {formatNumber(amount)}</p>
+            </div>
+            <div className="result-block">
+              <strong>Total Interest</strong>
+              <p>LKR {formatNumber(totalInterest)}</p>
+            </div>
+            <div className="result-block">
+              <strong>Total Payment (with Interest)</strong>
+              <p>LKR {formatNumber(totalPayment)}</p>
+            </div>
+            <div className="result-block">
+              <strong>Loan Term</strong>
+              <p>{years} Years</p>
+            </div>
+          </div>
+        </>
       ) : (
         <div className="placeholder">Enter details to calculate your payment</div>
       )}
