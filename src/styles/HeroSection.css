@@ -281,3 +281,28 @@
   margin-left: 0.5rem;
   vertical-align: middle;
 }
+
+/* Add these styles to your existing HeroSection.css file */
+
+.hero-social {
+  position: absolute;
+  top: 20%; /* Adjust as needed */
+  right: 4%; /* Adjust as needed */
+  z-index: 10; /* Ensure it's above other elements */
+}
+
+.hero-social-icon {
+  color: #ffffff; /* Or your preferred color */
+}
+
+.hero-social a:hover .hero-social-icon {
+  color: #f68d04; /* Facebook blue on hover */
+}
+
+/* Add a media query for responsiveness */
+@media (max-width: 768px) {
+  .hero-social {
+    top: 10%;
+    right: 4%;
+  }
+}

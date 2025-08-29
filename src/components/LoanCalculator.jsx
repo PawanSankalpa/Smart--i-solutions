@@ -56,7 +56,7 @@ const LoanCalculator = () => {
   }, [loanData]);
 
   return (
-    <div className="loan-calculator">
+    <div id="loancalculator" className="loan-calculator">
       <h2>Solar Loan Calculator</h2>
       <p className="calculator-description">
         Estimate your monthly payments for a solar system with our easy-to-use calculator

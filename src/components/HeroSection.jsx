@@ -9,6 +9,9 @@ import {
   Bolt,
   Phone,
   Images,
+  Percent,
+  Calculator,
+  Facebook, // <-- Import the Facebook icon
 } from "lucide-react";
 import "../styles/HeroSection.css";
 // import NavigationBar from "./NavigationBar.jsx";
@@ -35,6 +38,23 @@ const HeroSection = () => (
       transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
     >
       <Sun size={400} className="hero-sun-icon" />
+    </motion.div>
+
+    {/* Facebook Icon */}
+    <motion.div
+      className="hero-social"
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.5 }}
+    >
+      <a
+        href="https://www.facebook.com/sunmaxenergy" // Replace with your Facebook page URL
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit our Facebook page"
+      >
+        <Facebook size={40} className="hero-social-icon" />
+      </a>
     </motion.div>
 
     {/* Main Content */}
@@ -76,7 +96,6 @@ const HeroSection = () => (
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-
         <button
           className="hero-button-photos"
           onClick={() => {
@@ -93,14 +112,14 @@ const HeroSection = () => (
         <button
           className="hero-button-analysis"
           onClick={() => {
-            const section = document.getElementById("gallery");
+            const section = document.getElementById("loancalculator");
             if (section) {
               section.scrollIntoView({ behavior: "smooth" });
             }
           }}
         >
-          Explore Our Services
-          <Bolt size={20} className="hero-button-icon" />
+          Loan Calculator
+          <Percent size={20} className="hero-button-icon" />
         </button>
         
 
