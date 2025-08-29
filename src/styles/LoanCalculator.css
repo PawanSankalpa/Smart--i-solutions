@@ -1,0 +1,131 @@
+/* LoanCalculatorResponsive.css */
+
+.loan-calculator {
+  max-width: 640px; /* Slightly reduced for better centering */
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f9fafb, #f1f5f9); /* Light soft gradient */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Slightly softer shadow */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  box-sizing: border-box; /* Prevents padding from causing overflow */
+}
+
+.loan-calculator h2 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #e67e22; /* Bright orange accent */
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.loan-calculator label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.loan-calculator input,
+.loan-calculator select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  background-color: #fff; /* Ensures fields remain crisp */
+}
+
+.loan-calculator input:focus,
+.loan-calculator select:focus {
+  border-color: #2c3e50;
+  box-shadow: 0 0 6px rgba(44, 62, 80, 0.3);
+  outline: none;
+}
+
+.loan-calculator hr {
+  border: none;
+  border-top: 1px solid #e4e7eb;
+  margin: 1.2rem 0;
+}
+
+.loan-calculator .result {
+  padding: 1rem;
+  background: #f2f9ff;
+  border-radius: 8px;
+  text-align: center;
+  color: #1a5276;
+}
+
+.loan-calculator .result strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.loan-calculator .payment {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #e67e22;
+}
+
+.loan-calculator .placeholder {
+  text-align: center;
+  color: #777;
+  font-size: 0.95rem;
+}
+
+/* Button styles */
+.loan-calculator button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.05rem;
+  color: #fff;
+  background: #e67e22;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s ease;
+}
+.loan-calculator button:hover {
+  background: #d35400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .loan-calculator {
+    max-width: 90%;
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .loan-calculator h2 {
+    font-size: 1.4rem;
+  }
+
+  .loan-calculator .payment {
+    font-size: 1.4rem;
+  }
+
+  .loan-calculator input,
+  .loan-calculator select {
+    font-size: 0.95rem;
+    padding: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loan-calculator {
+    margin: 1rem;
+    padding: 0.8rem;
+  }
+
+  .loan-calculator h2 {
+    font-size: 1.3rem;
+  }
+}

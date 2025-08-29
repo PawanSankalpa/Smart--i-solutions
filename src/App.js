@@ -11,6 +11,7 @@ import CTA from "./components/CTA";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import Photos from "./components/Photos.jsx";
+import LoanCalculator from "./components/LoanCalculator.jsx";
 
 
 import "./App.css";
@@ -22,6 +23,7 @@ function App() {
       <NavigationBar />
       <HeroSection />
       <StatsSection />
+      <LoanCalculator />
       <FeaturesSection />
       <ProcessSection />
       <Photos />
