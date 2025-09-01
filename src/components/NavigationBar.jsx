@@ -45,11 +45,11 @@ const NavigationBar = () => {
         {/* Navigation Links */}
         <div className={`navbar-links ${isOpen ? "open" : ""}`}>
           <a onClick={() => scrollToSection("hero")}>Home</a>
-          <a onClick={() => scrollToSection("stats")}>Stats</a>
+          <a onClick={() => scrollToSection("stats")}>Loan Calculator</a>
           <a onClick={() => scrollToSection("features")}>Features</a>
           <a onClick={() => scrollToSection("process")}>Process</a>
-          <a onClick={() => scrollToSection("photos")}>Photos</a>
-          <a onClick={() => scrollToSection("testimonials")}>Testimonials</a>
+          <a onClick={() => scrollToSection("photos")}>Our Work</a>
+          <a onClick={() => scrollToSection("testimonials")}>Reviews</a>
           <a onClick={() => scrollToSection("gallery")}>Services</a>
           <a onClick={() => scrollToSection("faq")}>FAQ</a>
           <a onClick={() => scrollToSection("cta")} className="get-started-link">

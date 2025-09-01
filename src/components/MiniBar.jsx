@@ -10,7 +10,7 @@ export default function TopBar() {
           info@sunmaxenergy.lk
         </a>
         <div className="top-bar-socials">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/share/1CLvCCpxNX/" target="_blank" rel="noopener noreferrer">
             <FaFacebookF />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">

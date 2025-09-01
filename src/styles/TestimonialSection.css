@@ -1,346 +1,341 @@
-/* src/styles/TestimonialSection.css */
-
-/* Base styles for the entire testimonial carousel section */
-.testimonial-carousel-section {
-  position: relative;
-  padding: 120px 20px; /* Increased padding for more visual breathing room */
-  /* Background gradient matching the solar theme: very light blue, subtle green, and soft yellow */
-  background: linear-gradient(180deg, #f0faff 0%, #e8f5f8 50%, #fcfdf5 100%);
-  color: #333; /* Default dark text color for excellent readability */
-  text-align: center; /* Center-align all text within the section */
-  overflow: hidden; /* Ensures that any overflowing content or animations are clipped */
-  isolation: isolate; /* Creates a new stacking context for backdrop-filter to work reliably */
+/* GoogleStyleReviews.css */
+.google-reviews-section {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  color: #202124;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Subtle background patterns for visual interest */
-.testimonial-carousel-section::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* Covers the entire section */
-  background:
-    /* Subtle orange glow from top-left */
-    radial-gradient(circle at 20% 70%, rgba(245, 158, 11, 0.06) 0%, transparent 25%),
-    /* Subtle blue glow from bottom-right */
-    radial-gradient(circle at 80% 30%, rgba(14, 165, 233, 0.06) 0%, transparent 25%);
-  z-index: -1; /* Positions behind the main content */
-  pointer-events: none; /* Ensures it doesn't interfere with user interaction */
-}
-
-/* Styles for the header of the testimonial section */
-.testimonial-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 80px; /* Increased bottom margin for more separation */
-  position: relative;
-  animation: fadeIn 1s ease-out; /* Smooth fade-in animation for the header */
-  z-index: 2; /* Ensures header is above background elements */
-}
-
-.testimonial-header h2 {
-  font-size: 3.2rem; /* Adjusted font size for a professional look */
-  font-weight: 800; /* Extra bold for strong impact */
-  /* Gradient text color matching the primary blue and green from the logo */
-  background: linear-gradient(to right, #0ea5e9, #10b981);
-  -webkit-background-clip: text; /* For gradient text on WebKit browsers */
-  background-clip: text; /* Applies the gradient to the text fill */
-  color: transparent; /* Makes the actual text transparent to show the background clip */
-  margin-bottom: 1.2rem; /* Space between the title and subtitle */
-  line-height: 1.2; /* Tighter line height for large titles */
-  letter-spacing: -0.5px; /* Subtle letter spacing adjustment */
-}
-
-.testimonial-header p {
-  font-size: 1.2rem; /* Clear and inviting font size for the subtitle */
-  color: #64748b; /* Slightly darker gray for better contrast and modern feel */
-  line-height: 1.6; /* Increased line height for better readability */
-}
-
-/* Styles for the main carousel container */
-.carousel-container {
-  max-width: 1000px; /* Increased max-width for a wider carousel on larger screens */
-  margin: 0 auto; /* Centers the carousel horizontally */
-  position: relative;
-  display: flex; /* Uses flexbox for layout of slides and buttons */
-  align-items: center; /* Vertically aligns items in the center */
-  justify-content: center; /* Horizontally aligns items in the center */
-  padding: 0 4rem; /* Increased horizontal padding for carousel buttons */
-  min-height: 380px; /* Ensures a minimum height for the carousel area */
-  z-index: 2; /* Ensures carousel content is above background elements */
-}
-
-/* Styles for individual carousel slides */
-.carousel-slide {
-  opacity: 0; /* Initially hidden */
-  transform: scale(0.9); /* Slightly scaled down initially */
-  /* Smooth transitions for opacity and transform for slide animations */
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: absolute; /* Positions slides absolutely within the carousel container */
-  width: 100%; /* Each slide takes the full width of the container */
-  max-width: 700px; /* Max width for the slide content */
-  pointer-events: none; /* Disables interaction when the slide is not active */
-  display: flex; /* Uses flexbox to center the testimonial card within the slide */
-  justify-content: center;
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-/* Styles for the active (currently visible) slide */
-.carousel-slide.active {
-  opacity: 1; /* Fully visible */
-  transform: scale(1); /* Returns to original size */
-  position: relative; /* Becomes part of the normal flow for interaction */
-  pointer-events: auto; /* Enables interaction when active */
-  z-index: 1; /* Ensures the active slide is on top */
+.header-content {
+  flex: 1;
 }
 
-/* Styles for the testimonial card itself */
-.testimonial-card {
-  /* Liquid glass effect for the card */
-  background: rgba(255, 255, 255, 0.25); /* Semi-transparent white */
-  backdrop-filter: blur(20px); /* Stronger blur for a more pronounced effect */
-  border-radius: 20px; /* Rounded corners */
-  padding: 2.5rem; /* Generous padding inside the card */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Soft, diffused shadow */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for definition */
-  /* Simplified transition: removed hover-specific properties */
-  transition: background 0.6s ease, box-shadow 0.6s ease, border 0.6s ease;
-  display: flex;
-  flex-direction: column; /* Stacks content vertically */
-  align-items: center; /* Centers content horizontally */
-  text-align: center; /* Centers text within the card */
-  height: auto; /* Allows the card height to adjust to its content */
-  width: 100%; /* Takes full width of its carousel slide */
-  max-width: 600px; /* Maximum width for the card itself */
-  overflow: hidden; /* Ensures pseudo-element stays within bounds */
+.google-style-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
-/* Pseudo-element for the liquid flow animation (removed hover trigger) */
-.testimonial-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%); /* Subtle white gradient */
-  transform: rotate(30deg);
-  opacity: 0; /* Always hidden as hover effect removed */
-  transition: opacity 0.6s ease;
-  z-index: -1; /* Behind card content */
+.g-blue { color: #4285F4; }
+.o-red { color: #EA4335; }
+.o-yellow { color: #FBBC05; }
+.l-green { color: #34A853; }
+.reviews-text { color: #5f6368; }
+
+.reviews-header h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: #202124;
 }
 
-/* Removed .testimonial-card:hover styles */
-
-/* Keyframe animation for the liquid flow effect (still defined but not triggered by hover) */
-@keyframes liquidFlow {
-  0% { transform: translateY(0) rotate(30deg); }
-  100% { transform: translateY(100%) rotate(30deg); }
+.reviews-header p {
+  color: #5f6368;
+  margin: 0;
 }
 
-/* Styles for the star rating container */
-.testimonial-stars {
-  display: flex;
-  justify-content: center; /* Centers the stars horizontally */
-  margin-bottom: 1.5rem; /* Space below the stars */
-  gap: 0.25rem; /* Small space between individual stars */
-  /* Removed hover-related transition */
-}
-
-/* Styles for the Star SVG component */
-.testimonial-stars svg {
-  fill: #FFC107; /* Ensures the SVG fill matches the color (Yellow/Orange from logo) */
-  stroke: #FFC107; /* Ensures the SVG stroke matches the color */
-}
-
-/* Styles for the testimonial quote */
-.testimonial-card blockquote {
-  font-size: 1.25rem; /* Readable font size for the quote */
-  font-style: italic; /* Italic style for quotes */
-  line-height: 1.7; /* Increased line height for better readability */
-  color: #475569; /* Darker gray for quotes for better contrast */
-  margin-bottom: 2rem; /* Generous space below the quote */
-  /* Removed hover-related transition */
-}
-
-/* Removed .testimonial-card:hover blockquote styles */
-
-/* Styles for the testimonial author's name */
-.testimonial-name {
-  font-weight: 700; /* Bold font weight */
-  color: #0f172a; /* Very dark blue for strong presence */
-  font-size: 1.25rem; /* Prominent font size for the name */
-  margin-bottom: 0.25rem; /* Small space between name and role */
-  /* Removed hover-related transition */
+.overall-rating {
   text-align: center;
+  background: white;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
 }
 
-/* Removed .testimonial-card:hover .testimonial-name styles */
-
-/* Styles for the testimonial author's role */
-.testimonial-role {
-  font-size: 0.9375rem; /* Font size for the role */
-  color: #64748b; /* Medium gray for roles */
-  text-align: center;
-  /* Removed hover-related transition */
+.rating-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #202124;
+  line-height: 1;
 }
 
-/* Removed .testimonial-card:hover .testimonial-role styles */
+.stars {
+  color: #FBBC05;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin: 0.5rem 0;
+}
 
-/* Styles for carousel navigation buttons (previous/next) */
-.carousel-btn {
-  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
-  border: none;
-  border-radius: 50%; /* Circular shape */
-  width: 3.5rem; /* Larger buttons for easier tapping */
-  height: 3.5rem; /* Larger buttons for easier tapping */
+.rating-count {
+  color: #5f6368;
+  font-size: 0.9rem;
+}
+
+.reviews-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.nav-btn {
+  background: white;
+  border: 1px solid #dadce0;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 2; /* Ensures buttons are above slides */
-  backdrop-filter: blur(8px); /* Frosted glass effect */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow */
-  font-size: 1.8rem; /* Larger arrow characters */
-  color: #0f172a; /* Very dark blue for arrows */
-  /* Simplified transition: removed hover-specific properties */
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  transition: all 0.2s ease;
+  z-index: 2;
+  flex-shrink: 0;
 }
 
-/* Removed .carousel-btn:hover styles */
-
-.carousel-btn:active {
-  transform: scale(0.95); /* Slight press effect on click */
+.nav-btn:hover {
+  background: #f1f3f4;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-.carousel-btn.prev {
-  position: absolute;
-  left: 0; /* Aligned to the very left edge of the container */
+.nav-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #5f6368;
 }
 
-.carousel-btn.next {
-  position: absolute;
-  right: 0; /* Aligned to the very right edge of the container */
-}
-
-/* Styles for the carousel navigation dots */
-.carousel-dots {
+.reviews-grid {
   display: flex;
-  justify-content: center; /* Centers the dots horizontally */
-  margin-top: 3rem; /* Space below the carousel container */
-  gap: 0.75rem; /* Space between individual dots */
+  gap: 1.5rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.google-review-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 280px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.google-review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.reviewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4285F4;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.reviewer-details {
+  line-height: 1.3;
+}
+
+.reviewer-name {
+  font-weight: 700;
+  color: #202124;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: #5f6368;
+}
+
+.google-logo-mini {
+  width: 24px;
+  height: 24px;
+}
+
+.g-mini {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4285F4;
+}
+
+.rating {
+  margin-bottom: 1rem;
+  color: #FBBC05;
+  font-size: 1.1rem;
+}
+
+.review-text {
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  color: #202124;
+}
+
+.review-text p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.review-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reviewer-location {
+  font-size: 0.85rem;
+  color: #5f6368;
+  font-weight: 600;
+}
+
+.verified-purchase {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #34A853;
+}
+
+.verified-purchase svg {
+  width: 14px;
+  height: 14px;
+  fill: #34A853;
+}
+
+.reviews-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .dot {
-  width: 12px; /* Fixed width for dots */
-  height: 12px; /* Fixed height for dots */
-  border-radius: 50%; /* Circular shape */
-  background: #cbd5e1; /* Light gray for inactive dots */
-  cursor: pointer; /* Indicates interactivity */
-  /* Simplified transition: removed hover-specific properties */
-  transition: background-color 0.4s ease;
+  width: 10px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #dadce0;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
-
-/* Removed .dot:hover styles */
 
 .dot.active {
-  background: linear-gradient(135deg, #f59e0b, #fbbf24); /* Orange gradient for active dot */
-  transform: scale(1.3); /* More pronounced scale for active dot */
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3); /* Soft glow for active dot */
+  background: #4285F4;
+  transform: scale(1.2);
 }
 
-/* --- Responsive Design Adjustments --- */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
 
-/* Adjustments for screens up to 1024px (e.g., larger tablets, small laptops) */
-@media (max-width: 1024px) {
-  .testimonial-carousel-section {
-    padding: 90px 15px; /* Slightly reduced padding */
+.write-review-btn, .see-all-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.write-review-btn {
+  background: #4285F4;
+  color: white;
+  border: none;
+}
+
+.write-review-btn:hover {
+  background: #3367d6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.see-all-btn {
+  background: white;
+  color: #4285F4;
+  border: 1px solid #dadce0;
+}
+
+.see-all-btn:hover {
+  background: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .reviews-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .testimonial-header h2 {
-    font-size: 2.8rem; /* Adjusted title size */
-  }
-  .testimonial-header p {
-    font-size: 1.1rem; /* Adjusted subtitle size */
-  }
-  .carousel-container {
-    padding: 0 2rem; /* Reduced horizontal padding for buttons */
-    min-height: 350px; /* Adjusted minimum height */
-  }
-  .carousel-btn {
-    width: 3rem; /* Smaller buttons */
-    height: 3rem;
-    font-size: 1.5rem; /* Smaller arrow size */
-  }
-  .testimonial-card {
-    padding: 2rem; /* Reduced card padding */
-  }
-  .testimonial-card blockquote {
-    font-size: 1.1rem; /* Adjusted quote font size */
-  }
-  .testimonial-name {
-    font-size: 1.1rem; /* Adjusted name font size */
-  }
-  .testimonial-role {
-    font-size: 0.85rem; /* Adjusted role font size */
+  
+  .overall-rating {
+    align-self: flex-start;
   }
 }
 
-/* Adjustments for screens up to 768px (e.g., most tablets in portrait, larger phones) */
 @media (max-width: 768px) {
-  .testimonial-carousel-section {
-    padding: 60px 10px; /* Further reduced padding */
+  .google-reviews-section {
+    padding: 3rem 1rem;
   }
-  .testimonial-header h2 {
-    font-size: 2.2rem; /* Further reduced title size */
+  
+  .reviews-grid {
+    gap: 1rem;
   }
-  .testimonial-header p {
-    font-size: 0.95rem; /* Further reduced subtitle size */
-  }
-  .carousel-container {
-    padding: 0 1rem; /* Minimal horizontal padding */
-    min-height: 320px; /* Adjusted minimum height */
-  }
-  .carousel-btn {
-    width: 2.5rem; /* Even smaller buttons */
-    height: 2.5rem;
-    font-size: 1.2rem; /* Even smaller arrow size */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Softer shadow for mobile */
-  }
-  .testimonial-card {
-    padding: 1.8rem; /* Further reduced card padding */
-    backdrop-filter: blur(15px); /* Keep blur strong but consider performance */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer shadow for mobile */
-  }
-  .testimonial-card blockquote {
-    font-size: 1rem; /* Smallest quote font size */
-    margin-bottom: 1.5rem; /* Adjusted space */
-  }
-  .testimonial-name {
-    font-size: 1rem; /* Adjusted name size */
-  }
-  .testimonial-role {
-    font-size: 0.8rem; /* Adjusted role size */
-  }
-  .carousel-dots {
-    margin-top: 2rem; /* Less space below carousel */
-    gap: 0.5rem; /* Smaller gap between dots */
-  }
-  .dot {
-    width: 10px; /* Smaller dots */
-    height: 10px;
+  
+  .google-review-card {
+    min-width: 260px;
   }
 }
 
-/* Adjustments for screens up to 480px (e.g., smaller phones) */
-@media (max-width: 480px) {
-  .testimonial-header h2 {
-    font-size: 1.8rem; /* Smallest title size */
+@media (max-width: 600px) {
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
   }
-  .testimonial-header p {
-    font-size: 0.85rem; /* Smallest subtitle size */
+  
+  .write-review-btn, .see-all-btn {
+    width: 100%;
+    max-width: 280px;
   }
-  .carousel-container {
-    min-height: 280px; /* Adjusted minimum height */
+  
+  .nav-btn {
+    width: 40px;
+    height: 40px;
   }
-  .testimonial-card {
-    padding: 1.5rem; /* Smallest card padding */
+  
+  .nav-btn svg {
+    width: 20px;
+    height: 20px;
   }
+}
+
+/* Animation for cards */
+@keyframes fadeIn {
+  from { opacity: 0.6; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.google-review-card {
+  animation: fadeIn 0.3s ease-out;
 }

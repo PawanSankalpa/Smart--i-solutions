@@ -1,0 +1,103 @@
+/* Ringing animation for the button */
+@keyframes ring {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px) rotate(-2deg);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px) rotate(2deg);
+  }
+}
+
+/* Vibrate animation for the phone icon */
+@keyframes vibrate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Main container that handles positioning and hover state */
+.call-button-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* The primary circular button */
+.call-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #22c55e;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: ring 2s ease-in-out infinite;
+}
+
+.call-button-container:hover .call-button {
+  background: #16a34a;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Icon styling */
+.call-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #ffffff;
+  animation: vibrate 0.2s ease-in-out infinite alternate;
+}
+
+/* Text styling, initially hidden and positioned above */
+.call-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #16a34a;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px; /* Pill shape */
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+/* Show text on hover of the container */
+.call-button-container:hover .call-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .call-button-container {
+    bottom: 1.5rem;
+    right: 1rem;
+  }
+  .call-button {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .call-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .call-text {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

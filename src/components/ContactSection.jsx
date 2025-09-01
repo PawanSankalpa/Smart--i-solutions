@@ -40,11 +40,11 @@ const ContactSection = () => (
 
           <div className="contact-item">
             <span className="contact-icon">📞</span>
-            <a href="tel:+94713848336" style={{ textDecoration: "none" }}>
+            <a href="tel:+94772804344" style={{ textDecoration: "none" }}>
               <div>
                 <h3>Call Us</h3>
 
-                <p>+94 713848336</p>
+                <p>077 2804344</p>
               </div>
             </a>
           </div>

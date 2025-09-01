@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
   background: linear-gradient(135deg, #07074c 0%, rgb(33, 149, 203) 50%, #07074c 100%);
   color: #ffffff;
   overflow: hidden;

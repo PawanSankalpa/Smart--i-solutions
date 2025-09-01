@@ -123,7 +123,7 @@ const HeroSection = () => (
         </button>
         
 
-        <a href="tel:+94713848336" className="hero-button-call-link">
+        <a href="tel:+94772804344" className="hero-button-call-link">
           <button className="hero-button-call">
             Call Us Today
             <Phone size={20} className="hero-button-icon" />

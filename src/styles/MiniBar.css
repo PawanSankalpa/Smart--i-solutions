@@ -1,7 +1,7 @@
 /* --- Top Bar --- */
 .top-bar {
   width: 100%;
-  background: linear-gradient(90deg,rgba(7, 7, 76, 0.45) 20%,  #e89541 50%, #3ada45 100%);
+  background: linear-gradient(90deg,#4fbe56 10%,  #e89541 50%,#07074c 75%);
   background-size: 200% 200%;
   animation: gradientShift 10s ease infinite;
   color: #ffffff;
@@ -37,7 +37,7 @@
 }
 
 .top-bar-email:hover {
-  color: #ffb400;
+  color: #100000be;
 }
 
 /* Social icons in the center */
@@ -54,7 +54,7 @@
 }
 
 .top-bar-socials a:hover {
-  color: #ffb400;
+  color: #ff08007b;
   transform: scale(1.15);
 }
 

@@ -22,7 +22,7 @@ const CTA = () => (
             </button>
           </a>
           <a
-            href="tel:+94713848336"
+            href="tel:+94772804344" 
             style={{ color: "inherit", textDecoration: "none" }}
           >
             <button className="cta-button-secondary">
