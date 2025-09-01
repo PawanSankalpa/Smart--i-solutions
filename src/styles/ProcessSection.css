@@ -7,6 +7,8 @@
   overflow: hidden;
   isolation: isolate;
   will-change: transform; /* optimization for rendering */
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
 }
 
 .process-section::before {
@@ -30,22 +32,24 @@
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.75rem; /* Slightly larger for better hierarchy */
   font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(to right, #1e3a8a, #10b981);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  line-height: 1.2;
+  line-height: 1.3; /* Improved line height */
+  letter-spacing: -0.5px; /* Slightly tighter for headings */
 }
 
 .section-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.3rem; /* Slightly larger for better readability */
   color: #475569;
-  max-width: 600px;
+  max-width: 650px; /* Slightly wider for better text flow */
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7; /* Improved line spacing */
+  font-weight: 700; /* Normal weight for better readability */
 }
 
 /* Liquid Glass Timeline */
@@ -126,14 +130,14 @@
 }
 
 .step-content {
-  padding: 2rem;
+  padding: 2.25rem; /* Slightly more padding for better text breathing room */
 }
 
 .step-header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem; /* Slightly more space */
 }
 
 .step-icon {
@@ -148,16 +152,20 @@
 }
 
 .step-title {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem; /* Slightly larger for better hierarchy */
+  font-weight: 700;
   color: #1e3a8a;
   margin: 0;
+  line-height: 1.4; /* Better line height for headings */
+  letter-spacing: -0.25px; /* Slightly tighter for headings */
 }
 
 .step-description {
   color: #475569;
-  line-height: 1.6;
+  line-height: 1.7; /* Improved line spacing for readability */
   margin: 0;
+  font-size: 1.05rem; /* Slightly larger for better readability */
+  font-weight: 700; /* Normal weight for body text */
 }
 
 /* Floating energy particles */
@@ -198,11 +206,12 @@
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.25rem; /* Adjusted for mobile */
   }
 
   .section-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.15rem; /* Adjusted for mobile */
+    line-height: 1.6;
   }
 
   .timeline-line,
@@ -221,11 +230,16 @@
   }
 
   .step-content {
-    padding: 1.5rem;
+    padding: 1.75rem; /* Adjusted for mobile */
   }
 
   .step-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem; /* Adjusted for mobile */
+  }
+  
+  .step-description {
+    font-size: 1rem; /* Reset to normal size on mobile */
+    line-height: 1.6;
   }
 }
 
@@ -253,5 +267,13 @@
   .step-icon {
     width: 40px;
     height: 40px;
+  }
+  
+  .section-title {
+    font-size: 2rem; /* Smaller for very small screens */
+  }
+  
+  .step-title {
+    font-size: 1.3rem; /* Smaller for very small screens */
   }
 }

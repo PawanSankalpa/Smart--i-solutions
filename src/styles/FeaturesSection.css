@@ -179,3 +179,34 @@
     font-size: 6rem;
   }
 }
+
+/* Features Section - Solar Company */
+.features-section {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Friendly, modern font */
+}
+
+.features-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800; /* Slightly bolder for headings */
+}
+
+.features-header p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Comfortable for reading */
+  color: #475569; 
+  line-height: 1.6;
+}
+
+.feature-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Slightly bolder for clear titles */
+  color: #1e3a8a;
+}
+
+.feature-description {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Bold */
+  color: #475569;
+  line-height: 1.6;
+}
+

@@ -1,16 +1,19 @@
+/* --- Hero Section --- */
 .hero-section {
   position: relative;
-  min-height: 75vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg,  #07074c 0%, rgb(33, 149, 203) 50%, #07074c 100%);
+  background: linear-gradient(135deg, #07074c 0%, rgb(33, 149, 203) 50%, #07074c 100%);
   color: #ffffff;
   overflow: hidden;
-  padding: 2rem;
+  padding: 2rem 2rem 0; /* Combined padding */
   padding-top: 4.5rem;
+  font-family: "Inter", "Poppins", "Segoe UI", sans-serif; /* Global friendly font */
 }
 
+/* Subtle floating background elements */
 .hero-sun {
   position: absolute;
   top: 10%;
@@ -28,38 +31,31 @@
   z-index: 1;
 }
 
+/* Hero Badge */
 .hero-badge {
   display: inline-block;
-  background-color: #f7cd10; /* solid golden yellow */
-  color: #1e3a8a; /* deep navy */
-  font-family: "Poppins", "Roboto Mono", "Segoe UI", sans-serif; /* modern, square-like fonts */
-  font-style: normal;
-  font-size: 1.4rem; /* smaller than before */
+  background-color: #f7cd10;
+  color: #1e3a8a;
+  font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: 1px; /* more breathing space, square fonts look cleaner */
-  padding: 0.5rem 1.2rem; /* smaller, more compact padding */
-  border-radius: 8px; /* subtle rounding for a modern rectangular shape */
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-
-  /* 3D effect */
-  box-shadow: 
-    0 5px 8px rgba(0, 0, 0, 0.2),   /* main shadow */
-    inset 0 -2px 0 rgba(255, 255, 255, 0.3), /* subtle inner highlight */
-    0 4px 6px rgba(0, 0, 0, 0.15);   /* extra depth */
+  letter-spacing: 1px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  margin: 2rem 0 1rem;
+  box-shadow:
+    0 5px 8px rgba(0, 0, 0, 0.2),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.3),
+    0 4px 6px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  /* optional hover effect for more 3D feel */
   cursor: pointer;
 }
+
 .hero-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 
-    0 6px 12px rgba(0, 0, 0, 0.25), 
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.25),
     inset 0 -2px 0 rgba(255, 255, 255, 0.3);
 }
-
-
 
 .hero-badge-icon {
   vertical-align: middle;
@@ -67,6 +63,7 @@
   color: #1e3a8a;
 }
 
+/* Title and Description */
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -75,18 +72,23 @@
 }
 
 .hero-title-highlight {
-  color: #f5c60bed;
+  color: #f5c60b;
 }
 
 .hero-description {
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.7; /* More comfortable */
+  opacity: 0.92;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  font-weight: 580;
+  letter-spacing: 0.2px;
+  color: #eae5de;
 }
 
+/* Buttons */
 .hero-button-analysis,
-.hero-button-call {
+.hero-button-call,
+.hero-button-photos {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
@@ -95,13 +97,15 @@
   cursor: pointer;
   margin: 0.5rem;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-button-analysis {
   background-color: #10b981;
   color: #ffffff;
 }
-
 .hero-button-analysis:hover {
   background-color: #059669;
   transform: translateY(-2px);
@@ -112,18 +116,27 @@
   color: #ffffff;
   border: 2px solid #ffffff;
 }
-
 .hero-button-call:hover {
   background-color: #ffffff;
   color: #1e3a8a;
   transform: translateY(-2px);
 }
 
-.hero-button-icon {
-  vertical-align: middle;
-  margin-left: 0.5rem;
+.hero-button-photos {
+  background-color: #f5c60b;
+  color: #1e3a8a;
+}
+.hero-button-photos:hover {
+  background-color: #e0b200;
+  transform: translateY(-2px);
 }
 
+.hero-button-icon {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Features */
 .hero-features {
   display: flex;
   justify-content: center;
@@ -135,8 +148,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 700;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -146,38 +159,13 @@
   color: #f9d311;
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .hero-features {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-sun {
-    top: 5%;
-    right: 5%;
-  }
-
-  .hero-sun-icon {
-    width: 200px;
-    height: 200px;
-  }
-}
-
+/* Floating Panels */
 .hero-background-panels-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* overflow: hidden; */
   pointer-events: none;
   z-index: 10;
 }
@@ -185,16 +173,12 @@
 .hero-background-panel-item {
   position: absolute;
   opacity: 0;
+  animation: float 6s ease-in-out infinite;
 }
-
 .hero-background-panel-icon-subtle {
   color: #f59e0b;
   opacity: 0.3;
   transition: opacity 0.3s ease;
-}
-
-.hero-background-panel-item {
-  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -202,28 +186,35 @@
   50% { transform: translateY(-10px); }
 }
 
-@media (max-width: 768px) {
-  .hero-background-panel-item {
-    transform: scale(0.8);
-  }
-}
-
-/* Background Logo Styling */
+/* Background Logo */
 .hero-logo-bg {
   position: absolute;
-  top: 40%;          /* Vertically center in the left area */
-  left: 3%;          /* Slightly away from left edge */
+  top: 40%;
+  left: 3%;
   transform: translateY(-50%);
-  max-width: 220px;  /* Maximum width */
-  width: 20%;        /* Scales relative to screen width */
-  height: auto;      /* Keep aspect ratio */
-  /* opacity: 0.12;     Subtle background look */
-  z-index: 0;        /* Behind all content */
-  pointer-events: none; /* Click-through */
-  border-radius: 50%; /* Optional: circular effect */
+  max-width: 220px;
+  width: 20%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
 }
 
-/* Smaller screens */
+/* Social Icons */
+.hero-social {
+  position: absolute;
+  top: 20%;
+  right: 4%;
+  z-index: 10;
+}
+.hero-social-icon {
+  color: #ffffff;
+}
+.hero-social a:hover .hero-social-icon {
+  color: #f68d04;
+}
+
+/* --- Responsive --- */
 @media (max-width: 1024px) {
   .hero-logo-bg {
     max-width: 180px;
@@ -235,13 +226,13 @@
 }
 
 @media (max-width: 768px) {
-  .hero-logo-bg {
-    max-width: 120px;
-    width: 30%;
-    left: 3%;
-    top: 40%;
-    opacity: 0.08;
-  }
+  .hero-title { font-size: 2.5rem; }
+  .hero-description { font-size: 1.05rem; }
+  .hero-features { flex-direction: column; align-items: center; padding-bottom: 2.5rem; }
+  .hero-sun { top: 5%; right: 5%; }
+  .hero-sun-icon { width: 200px; height: 200px; }
+  .hero-logo-bg { max-width: 120px; width: 30%; left: 3%; top: 40%; opacity: 0.08; }
+  .hero-social { top: 10%; right: 4%; }
 }
 
 @media (max-width: 480px) {
@@ -251,58 +242,5 @@
     left: 2%;
     top: 35%;
     opacity: 0.07;
-  }
-}
-
-/* Photos Button Styling */
-.hero-button-photos {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  margin: 0.5rem;
-  transition: all 0.3s ease;
-
-  background-color: #f5c60b; /* Bright blue for visibility */
-  color: #1e3a8a;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-button-photos:hover {
-  background-color: #e0b200; /* Darker blue on hover */
-  transform: translateY(-2px);
-}
-
-.hero-button-photos .hero-button-icon {
-  margin-left: 0.5rem;
-  vertical-align: middle;
-}
-
-/* Add these styles to your existing HeroSection.css file */
-
-.hero-social {
-  position: absolute;
-  top: 20%; /* Adjust as needed */
-  right: 4%; /* Adjust as needed */
-  z-index: 10; /* Ensure it's above other elements */
-}
-
-.hero-social-icon {
-  color: #ffffff; /* Or your preferred color */
-}
-
-.hero-social a:hover .hero-social-icon {
-  color: #f68d04; /* Facebook blue on hover */
-}
-
-/* Add a media query for responsiveness */
-@media (max-width: 768px) {
-  .hero-social {
-    top: 10%;
-    right: 4%;
   }
 }

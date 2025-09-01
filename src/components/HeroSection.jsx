@@ -40,7 +40,7 @@ const HeroSection = () => (
       <Sun size={400} className="hero-sun-icon" />
     </motion.div>
 
-    {/* Facebook Icon */}
+    {/* Facebook Icon
     <motion.div
       className="hero-social"
       initial={{ opacity: 0, x: 50 }}
@@ -55,7 +55,7 @@ const HeroSection = () => (
       >
         <Facebook size={40} className="hero-social-icon" />
       </a>
-    </motion.div>
+    </motion.div> */}
 
     {/* Main Content */}
     <div className="hero-content">
@@ -139,7 +139,7 @@ const HeroSection = () => (
       >
         <div className="hero-feature-item">
           <ShieldCheck size={18} className="hero-feature-icon" />
-          25-Year Warranty
+          30-Year Warranty
         </div>
         <div className="hero-feature-item">
           <TrendingUp size={18} className="hero-feature-icon" />

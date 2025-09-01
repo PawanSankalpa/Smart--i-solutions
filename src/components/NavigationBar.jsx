@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/NavigationBar.css";
+import TopBar from "./MiniBar.jsx";
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,9 @@ const NavigationBar = () => {
   }, [isOpen]);
 
   return (
+    
     <div className="navbar-section">
+      <TopBar />
       <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
         {/* Logo */}
         <div className="navbar-logo" onClick={() => scrollToSection("hero")}>

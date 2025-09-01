@@ -57,7 +57,7 @@ const LoanCalculator = () => {
 
   return (
     <div id="loancalculator" className="loan-calculator">
-      <h2>Solar Loan Calculator</h2>
+      <h2>Sun Max Energy Loan Calculator</h2>
       <p className="calculator-description">
         Estimate your monthly payments for a solar system with our easy-to-use calculator
       </p>
@@ -151,10 +151,10 @@ const LoanCalculator = () => {
           <span>Total Payment:</span>
           <span>LKR {formatNumber(totalPayment)}</span>
         </div>
-        <div className="result-item">
+        {/* <div className="result-item">
           <span>Total Interest:</span>
           <span>LKR {formatNumber(totalInterest)}</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import Photos from "./components/Photos.jsx";
 import LoanCalculator from "./components/LoanCalculator.jsx";
+import TopBar from "./components/MiniBar.jsx";
 
 
 import "./App.css";
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="app-container">
       {/* <NavigationBar /> */}
+      <TopBar />
       <NavigationBar />
       <HeroSection />
       <StatsSection />

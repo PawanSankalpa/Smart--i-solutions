@@ -1,7 +1,7 @@
 /* Loan Calculator Styles - Matches SunMax Energy Website */
 .loan-calculator {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 1.5rem auto;
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
@@ -22,6 +22,7 @@
   color: #666;
   margin-bottom: 2rem;
   font-size: 0.95rem;
+  font-weight: 700;
 }
 
 .input-group {
@@ -220,6 +221,7 @@
   margin-bottom: 0.8rem;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid #eee;
+  font-weight: 600;
 }
 
 .result-item:last-child {
@@ -296,3 +298,4 @@
   outline: none;
   box-shadow: 0 0 0 3px rgba(26, 147, 111, 0.3);
 }
+

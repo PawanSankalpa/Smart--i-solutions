@@ -22,7 +22,7 @@
 
 .stat-item {
   background: rgba(255, 255, 255, 0.359);
-  top: -35%;
+  top: -30%;
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 2rem;
@@ -171,4 +171,20 @@
   .stat-item {
     padding: 1.5rem 1rem;
   }
+}
+
+.stat-label {
+  font-family: "Inter", "Poppins", "Segoe UI", sans-serif; /* clean, modern, and friendly */
+  font-weight: 600; /* slightly bolder for readability */
+  font-size: 1.1rem;
+  line-height: 1.5; /* gives breathing space for easy reading */
+  color: #1a1a1a; /* soft black for comfort */
+  opacity: 0.95; /* slightly higher than before for better visibility */
+  margin: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.stat-item:hover .stat-label {
+  opacity: 1;
+  transform: translateY(5px);
 }
