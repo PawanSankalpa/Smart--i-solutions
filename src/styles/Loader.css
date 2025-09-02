@@ -1,0 +1,392 @@
+/* SunMaxLoader.css */
+.sunmax-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Liquid glass background */
+.liquid-glass-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #07074c 0%, rgb(33, 149, 203) 50%, #07074c 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-shard {
+  position: absolute;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: float 15s infinite ease-in-out;
+}
+
+.shard-1 {
+  width: 120px;
+  height: 120px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.shard-2 {
+  width: 80px;
+  height: 80px;
+  top: 70%;
+  left: 10%;
+  animation-delay: -5s;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.shard-3 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  right: 10%;
+  animation-delay: -10s;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.shard-4 {
+  width: 60px;
+  height: 60px;
+  bottom: 15%;
+  right: 15%;
+  animation-delay: -7s;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.shard-5 {
+  width: 140px;
+  height: 140px;
+  top: 60%;
+  right: 5%;
+  animation-delay: -12s;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(15px) rotate(-5deg);
+  }
+}
+
+/* Solar system animation */
+.loader-content {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.solar-system {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFD700 0%, #FF8C00 70%);
+  box-shadow: 0 0 40px #FF8C00, 0 0 80px rgba(255, 140, 0, 0.6);
+  animation: sun-pulse 3s infinite alternate;
+}
+
+.sun-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 20px #FFFFFF;
+}
+
+.solar-flare {
+  position: absolute;
+  background: radial-gradient(ellipse, rgba(255, 140, 0, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: solar-flare 4s infinite;
+}
+
+.flare-1 {
+  width: 80px;
+  height: 20px;
+  top: 15px;
+  left: -15px;
+  animation-delay: 0s;
+}
+
+.flare-2 {
+  width: 60px;
+  height: 15px;
+  bottom: 17px;
+  right: -12px;
+  animation-delay: -1s;
+  transform: rotate(45deg);
+}
+
+.flare-3 {
+  width: 70px;
+  height: 18px;
+  top: -10px;
+  right: 5px;
+  animation-delay: -2s;
+  transform: rotate(80deg);
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.orbit-1 {
+  width: 100px;
+  height: 100px;
+  animation: orbit-rotate 10s infinite linear;
+}
+
+.orbit-2 {
+  width: 150px;
+  height: 150px;
+  animation: orbit-rotate 15s infinite linear;
+}
+
+.orbit-3 {
+  width: 200px;
+  height: 200px;
+  animation: orbit-rotate 20s infinite linear;
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.planet-1 {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #373a39, #313333);
+  box-shadow: 0 0 10px #5d605f;
+}
+
+.planet-2 {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #1d24e6, #25eb32);
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+.planet-3 {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #989675, #7d6961);
+  box-shadow: 0 0 10px #605f63;
+}
+
+.planet-ring {
+  position: absolute;
+  width: 30px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+}
+
+/* .solar-panel {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background: linear-gradient(to bottom, #2c3e50, #1a2530);
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+} */
+
+.energy-beams {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.beam {
+  position: absolute;
+  background: linear-gradient(to bottom, transparent, #f6cb0b, transparent);
+  width: 4px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform-origin: top center;
+  opacity: 0.7;
+}
+
+.beam-1 {
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: energy-beam 3s infinite;
+}
+
+.beam-2 {
+  transform: translate(-50%, -50%) rotate(10deg);
+  animation: energy-beam 3s infinite 1s;
+}
+
+.beam-3 {
+  transform: translate(-50%, -50%) rotate(-10deg);
+  animation: energy-beam 3s infinite 2s;
+}
+
+.loader-text {
+  margin-top: 2rem;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+.loader-text h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #f19a03, #46ed0a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader-text p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(to right, #e0b006, #45ef07);
+  border-radius: 3px;
+  animation: loading-progress 2s infinite alternate;
+}
+
+/* Animations */
+@keyframes sun-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 40px #FF8C00, 0 0 80px rgba(255, 140, 0, 0.6);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 60px #FF8C00, 0 0 100px rgba(255, 140, 0, 0.8);
+  }
+}
+
+@keyframes solar-flare {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes orbit-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes energy-beam {
+  0%, 100% {
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    height: 120px;
+    opacity: 0.7;
+  }
+}
+
+@keyframes loading-progress {
+  0% {
+    width: 30%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .loader-content {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-content {
+    transform: scale(0.7);
+  }
+  
+  .loader-text h3 {
+    font-size: 2rem;
+  }
+  
+  .loader-text p {
+    font-size: 1rem;
+  }
+}
