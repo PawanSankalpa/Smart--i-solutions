@@ -49,7 +49,7 @@ function App() {
         <Loader />
       ) : (
         <>
-          {/* <CallButton />
+          <CallButton />
           <TopBar />
           <NavigationBar />
           <HeroSection />
@@ -63,7 +63,7 @@ function App() {
           <FAQSection />
           <CTA />
           <ContactSection />
-          <Footer /> */}
+          <Footer />
         </>
       )}
     </div>
