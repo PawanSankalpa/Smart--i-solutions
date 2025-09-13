@@ -18,56 +18,56 @@ import CallButton from './components/CallButton.jsx';
 import Loader from './components/Loader.jsx';
 import './App.css';
 
-// function App() {
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [testimonials, setTestimonials] = useState([]);
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [testimonials, setTestimonials] = useState([]);
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         // Simulate API delay (3 seconds) to test loader
-//         await new Promise((resolve) => setTimeout(resolve, 3000));
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Simulate API delay (3 seconds) to test loader
+        await new Promise((resolve) => setTimeout(resolve, 3000));
 
-//         // Example API call (replace with your actual endpoint)
-//         const response = await fetch('https://api.example.com/testimonials');
-//         const data = await response.json();
+        // Example API call (replace with your actual endpoint)
+        const response = await fetch('https://api.example.com/testimonials');
+        const data = await response.json();
 
-//         setTestimonials(data);
-//         setIsLoading(false);
-//       } catch (error) {
-//         console.error('Error fetching data:', error);
-//         setIsLoading(false); // Hide loader even on error
-//       }
-//     };
+        setTestimonials(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setIsLoading(false); // Hide loader even on error
+      }
+    };
 
-//     fetchData();
-//   }, []);
+    fetchData();
+  }, []);
 
-//   return (
-//     <div className="app-container">
-//       {isLoading ? (
-//         <Loader />
-//       ) : (
-//         <>
-//           {/* <CallButton />
-//           <TopBar />
-//           <NavigationBar />
-//           <HeroSection />
-//           <StatsSection />
-//           <LoanCalculator />
-//           <FeaturesSection />
-//           <ProcessSection />
-//           <Photos />
-//           <GoogleStyleReviews testimonials={testimonials} />
-//           <GallerySection />
-//           <FAQSection />
-//           <CTA />
-//           <ContactSection />
-//           <Footer /> */}
-//         </>
-//       )}
-//     </div>
-//   );
-// }
+  return (
+    <div className="app-container">
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          {/* <CallButton />
+          <TopBar />
+          <NavigationBar />
+          <HeroSection />
+          <StatsSection />
+          <LoanCalculator />
+          <FeaturesSection />
+          <ProcessSection />
+          <Photos />
+          <GoogleStyleReviews testimonials={testimonials} />
+          <GallerySection />
+          <FAQSection />
+          <CTA />
+          <ContactSection />
+          <Footer /> */}
+        </>
+      )}
+    </div>
+  );
+}
 
-// export default App;
+export default App;
